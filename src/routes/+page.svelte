@@ -168,7 +168,7 @@
 									id={setting.key}
 									bind:value={formValues[setting.key].value}
 									disabled={!(setting.enabled || forceEnableDisabledItems)}
-									required
+									required={!setting.allow_empty}
 								/>
 							{:else}
 								<Select
@@ -188,7 +188,7 @@
 									id={setting.key}
 									bind:value={formValues[setting.key].value}
 									disabled={!(setting.enabled || forceEnableDisabledItems)}
-									required
+									required={!setting.allow_empty}
 								/>
 							{:else}
 								<Select
@@ -207,7 +207,7 @@
 								id={setting.key}
 								bind:value={formValues[setting.key].value}
 								disabled={!(setting.enabled || forceEnableDisabledItems)}
-								required
+								required={!setting.allow_empty}
 							/>
 						</div>
 					{:else if setting.type === 'float'}
@@ -219,7 +219,7 @@
 								id={setting.key}
 								bind:value={formValues[setting.key].value}
 								disabled={!(setting.enabled || forceEnableDisabledItems)}
-								required
+								required={!setting.allow_empty}
 							/>
 							<Range
 								id="{setting.key}-range"

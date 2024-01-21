@@ -7,6 +7,7 @@
                 "description": "ゲームの難易度",
                 "type": "planetext",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": "None",
@@ -19,6 +20,7 @@
                 "description": "昼の経過速度",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -31,6 +33,7 @@
                 "description": "夜の経過速度",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -43,6 +46,7 @@
                 "description": "経験値の入手倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -55,6 +59,7 @@
                 "description": "捕獲確率の倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -67,6 +72,7 @@
                 "description": "パル出現倍率(パフォーマンスに影響)",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -79,6 +85,7 @@
                 "description": "パルの与えるダメージ倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -91,6 +98,7 @@
                 "description": "パルの受けるダメージ倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -103,6 +111,7 @@
                 "description": "プレイヤーの与えるダメージ倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -115,6 +124,7 @@
                 "description": "プレイヤーの受けるダメージ倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -127,6 +137,7 @@
                 "description": "プレイヤーの満腹度減少倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -139,6 +150,7 @@
                 "description": "プレイヤーのスタミナ減少倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -151,6 +163,7 @@
                 "description": "プレイヤーのHP自然回復倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -163,6 +176,7 @@
                 "description": "プレイヤーの睡眠時HP回復倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -175,6 +189,7 @@
                 "description": "パルの満腹度減少倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -187,6 +202,7 @@
                 "description": "パルのスタミナ減少倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -199,6 +215,7 @@
                 "description": "パルのHP自然回復倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -211,6 +228,7 @@
                 "description": "パルの睡眠時HP回復倍率(パルボックス内)",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -224,6 +242,7 @@
                 "description": "建築物に対するダメージ倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -236,6 +255,7 @@
                 "description": "建築物の劣化速度倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -248,6 +268,7 @@
                 "description": "採集アイテムの入手量倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -260,6 +281,7 @@
                 "description": "採集オブジェクトのHP倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -272,6 +294,7 @@
                 "description": "採集オブジェクトのリスポーン間隔倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -284,6 +307,7 @@
                 "description": "ドロップアイテム量の倍率",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -296,6 +320,7 @@
                 "description": "デスペナルティ",
                 "type": "string",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": "None",
@@ -321,6 +346,7 @@
                 "description": "PvP許可",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": false,
@@ -333,6 +359,7 @@
                 "description": "フレンドリーファイア有効化",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": false,
@@ -345,6 +372,7 @@
                 "description": "侵略エネミーの有効化",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": true,
@@ -357,6 +385,7 @@
                 "description": "アクティブなうんこ",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": false,
@@ -369,6 +398,7 @@
                 "description": "ゲームパッドのエイムアシストの有効化",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": true,
@@ -381,6 +411,7 @@
                 "description": "キーボードのエイムアシストの有効化",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": false,
@@ -393,6 +424,7 @@
                 "description": "ドロップアイテム最大数",
                 "type": "int",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 3000,
@@ -405,6 +437,7 @@
                 "description": "うんこドロップの最大数",
                 "type": "int",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 100,
@@ -417,6 +450,7 @@
                 "description": "キャンプの最大数",
                 "type": "int",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 128,
@@ -429,6 +463,7 @@
                 "description": "キャンプの働き手の最大数",
                 "type": "int",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 15,
@@ -441,6 +476,7 @@
                 "description": "ドロップアイテムの有効な時間(単位: hour)",
                 "type": "float",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -453,6 +489,7 @@
                 "description": "プレイヤーがオンラインでない場合ギルドを初期化するか",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": false,
@@ -465,6 +502,7 @@
                 "description": "プレイヤーがオンラインでない場合にギルドを初期化する期限(単位: hour)",
                 "type": "float",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 72.000000,
@@ -477,6 +515,7 @@
                 "description": "ギルドの最大人数",
                 "type": "int",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 20,
@@ -489,6 +528,7 @@
                 "description": "キョダイタマゴの孵化にかかる時間(単位: hour)",
                 "type": "float",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 72.0,
@@ -501,6 +541,7 @@
                 "description": "仕事速度倍率",
                 "type": "float",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 1.0,
@@ -513,6 +554,7 @@
                 "description": "マルチプレイか",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": false,
@@ -525,6 +567,7 @@
                 "description": "PvPか",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": false,
@@ -537,6 +580,7 @@
                 "description": "他のギルド所属者がデスドロップを拾えるか",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": false,
@@ -549,6 +593,7 @@
                 "description": "未ログインによるペナルティの有効化",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": true,
@@ -561,6 +606,7 @@
                 "description": "ファストトラベルの有効化",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": true,
@@ -573,6 +619,7 @@
                 "description": "開始位置をマップから選ぶ機能の有効化",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": true,
@@ -585,6 +632,7 @@
                 "description": "ログアウト後もプレイヤーを存在させるか（？）",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": false,
@@ -597,6 +645,7 @@
                 "description": "他のギルドからの防衛を有効化",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": false,
@@ -609,6 +658,7 @@
                 "description": "協力プレイの最大人数",
                 "type": "int",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 4,
@@ -622,6 +672,7 @@
                 "description": "サーバの最大人数",
                 "type": "int",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 32,
@@ -634,6 +685,7 @@
                 "description": "サーバ名(環境依存文字は使用しないほうが無難)",
                 "type": "string",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": "Default Palworld Server",
@@ -646,6 +698,7 @@
                 "description": "サーバ説明(環境依存文字は使用しないほうが無難)",
                 "type": "string",
                 "enabled": true,
+                "allow_empty": true,
                 "values": [
                     {
                         "value": "",
@@ -658,6 +711,7 @@
                 "description": "アドミンパスワード(RCONパスも同様)",
                 "type": "string",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": "",
@@ -670,6 +724,7 @@
                 "description": "サーバパスワード(入場者を限定したい場合などに利用)",
                 "type": "string",
                 "enabled": true,
+                "allow_empty": true,
                 "values": [
                     {
                         "value": "",
@@ -682,6 +737,7 @@
                 "description": "ポート番号",
                 "type": "int",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 8211,
@@ -694,6 +750,7 @@
                 "description": "パブリックIP(ゲーム側が自動設定するがうまく動作しない場合は指定すること)",
                 "type": "string",
                 "enabled": true,
+                "allow_empty": true,
                 "values": [
                     {
                         "value": "",
@@ -706,6 +763,7 @@
                 "description": "RCONを有効化(有効化する場合はアドミンパスワードを設定することを推奨)",
                 "type": "bool",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": false,
@@ -718,6 +776,7 @@
                 "description": "RCONポート番号",
                 "type": "int",
                 "enabled": true,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": 25575,
@@ -730,6 +789,7 @@
                 "description": "サーバリージョン",
                 "type": "string",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": "",
@@ -742,6 +802,7 @@
                 "description": "認証",
                 "type": "bool",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": true,
@@ -754,6 +815,7 @@
                 "description": "バンリスト",
                 "type": "string",
                 "enabled": false,
+                "allow_empty": false,
                 "values": [
                     {
                         "value": "https://api.palworldgame.com/api/banlist.txt",

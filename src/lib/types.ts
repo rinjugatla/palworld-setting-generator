@@ -11,6 +11,7 @@ export interface BoolSetting {
     description: string;
     type: "bool";
     enabled: boolean;
+    allow_empty: boolean;
     values: {
         value: boolean;
         defalut?: boolean;
@@ -23,6 +24,7 @@ export interface NumberSetting {
     description: string;
     type: "float" | "int";
     enabled: boolean;
+    allow_empty: boolean;
     values: {
         value: number;
         defalut?: boolean;
@@ -35,6 +37,7 @@ export interface StringSetting {
     description: string;
     type: "planetext" | "string";
     enabled: boolean;
+    allow_empty: boolean;
     values: {
         value: string;
         defalut?: boolean;
