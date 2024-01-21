@@ -790,7 +790,7 @@
                 "description": "サーバリージョン",
                 "type": "string",
                 "enabled": false,
-                "allow_empty": false,
+                "allow_empty": true,
                 "values": [
                     {
                         "value": "",
