@@ -9,7 +9,7 @@
 		Range,
 		type SelectOptionType,
 		Alert,
-		Textarea,
+		Textarea
 	} from 'flowbite-svelte';
 	import { palworldServerSettings } from '$lib/palworld-server-serttings';
 	import { InfoCircleSolid } from 'flowbite-svelte-icons';
@@ -359,9 +359,14 @@
 
 				<div class="sm:col-span-2">
 					<Label for="server-setting-text">設定ファイルテキスト</Label>
-					<Textarea id="server-setting-text" rows="15" bind:value={serverSettingFileText} readonly/>
+					<Textarea
+						id="server-setting-text"
+						rows="15"
+						bind:value={serverSettingFileText}
+						readonly
+					/>
 				</div>
-				
+
 				<div class="sm:col-span-2">
 					<Button type="submit" class="w-full">設定ファイルを作成</Button>
 				</div>
