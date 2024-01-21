@@ -8,7 +8,8 @@
 		Checkbox,
 		Range,
 		type SelectOptionType,
-		Alert
+		Alert,
+		Textarea,
 	} from 'flowbite-svelte';
 	import { palworldServerSettings } from '$lib/palworld-server-serttings';
 	import { InfoCircleSolid } from 'flowbite-svelte-icons';
@@ -131,7 +132,7 @@
 	 * 設定ファイルを作成
 	 */
 	const generateSettingFile = () => {
-		const fileName = "PalWorldSettings.ini";
+		const fileName = 'PalWorldSettings.ini';
 		const fileType = 'text/plain';
 
 		const text = createServerSettingFileText();
@@ -141,22 +142,31 @@
 		tempA.download = fileName;
 		tempA.href = URL.createObjectURL(blob);
 		tempA.dataset.downloadurl = [fileType, tempA.download, tempA.href].join(':');
-		tempA.style.display = "none";
+		tempA.style.display = 'none';
 		document.body.appendChild(tempA);
 		tempA.click();
 		document.body.removeChild(tempA);
-		setTimeout(function() { URL.revokeObjectURL(tempA.href); }, 1500);
+		setTimeout(function () {
+			URL.revokeObjectURL(tempA.href);
+		}, 1500);
 	};
 
+	let serverSettingFileText = '';
+	$: {
+		// 変更検知のため読み出し
+		formValues;
+
+		serverSettingFileText = createServerSettingFileText();
+	}
 	/**
 	 * フォームの設定値からサーバの設定用テキストを作成(prefixを合わせた内容)
 	 */
 	const createServerSettingFileText = (): string => {
 		const settingFormat = selectedServerSettingFormat();
 		const formText = createFormSettingText();
-		const serverSettingText = settingFormat.replace(":GENERATE_SETTINGS:", formText);
+		const serverSettingText = settingFormat.replace(':GENERATE_SETTINGS:', formText);
 		return serverSettingText;
-	}
+	};
 
 	/**
 	 * フォームの設定値からサーバ設定用のテキストを作成(値部分)
@@ -347,6 +357,11 @@
 					{/if}
 				{/each}
 
+				<div class="sm:col-span-2">
+					<Label for="server-setting-text">設定ファイルテキスト</Label>
+					<Textarea id="server-setting-text" rows="15" bind:value={serverSettingFileText} readonly/>
+				</div>
+				
 				<div class="sm:col-span-2">
 					<Button type="submit" class="w-full">設定ファイルを作成</Button>
 				</div>
