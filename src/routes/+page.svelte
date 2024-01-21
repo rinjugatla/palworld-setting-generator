@@ -69,12 +69,20 @@
 		return value;
 	};
 
+	/**
+	 * デフォルトの値を取得(論理値用)
+	 * @param settingKey 設定キー
+	 */
 	const defaultSettingBoolValue = (settingKey: string): boolean => {
 		const value = defaultSettingValue(settingKey);
 		const typed = value as boolean;
 		return typed;
 	};
 
+	/**
+	 * デフォルトの値を取得(数値用)
+	 * @param settingKey 設定キー
+	 */
 	const defaultSettingNumberValue = (settingKey: string): number => {
 		const value = defaultSettingValue(settingKey);
 		const typed = value as number;
@@ -83,8 +91,11 @@
 
 	// 無効化された項目を有効化
 	let forceEnableDisabledItems = false;
+	// 選択中のサーババージョン
 	let selectedServerVersion: string;
+	// 選択中のサーババージョンの設定
 	let selectedVersionSettings: IPalworldServerSettings;
+	// フォームの入力値
 	let formValues: FormValues = {};
 	$: {
 		selectedVersionSettings = palworldServerSettings.filter(
@@ -99,6 +110,9 @@
 		)[0].settings;
 	};
 
+	/**
+	 * フォームの入力値を初期化
+	 */
 	const initFormValues = () => {
 		formValues = {};
 		selectedVersionSettings.forEach((setting) => {
@@ -109,10 +123,17 @@
 			};
 		});
 	};
+
+	/**
+	 * サーババージョンの変更
+	 */
 	const changedSelectVersion = (e: Event) => {
 		initFormValues();
 	};
 
+	/**
+	 * 初期化
+	 */
 	const init = () => {
 		selectedServerVersion = latestServerVersion();
 		initCurrentServerSettings();
