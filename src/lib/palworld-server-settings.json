@@ -333,7 +333,7 @@
                     },
                     {
                         "value": "ItemAndEquipment",
-                        "description": "アイテムをドロップ"
+                        "description": "アイテムと装備をドロップ"
                     },
                     {
                         "value": "All",
