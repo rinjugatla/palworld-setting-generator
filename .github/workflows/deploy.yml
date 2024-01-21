@@ -1,29 +1,39 @@
-name: deploy
-
+name: Deploy
 on:
   push:
-    branches:
-      - master
+    branches: main
+  pull_request:
+    branches: main
 
 jobs:
   deploy:
+    name: Deploy
     runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+
+    permissions:
+      id-token: write # Needed for auth with Deno Deploy
+      contents: read # Needed to clone the repository
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Clone repository
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v2
+      - name: Install Deno
+        uses: denoland/setup-deno@v1
         with:
-          node-version: '18'
-          cache: npm
+          deno-version: v1.x
 
-      - run: npm install
-
-      - run: npm run build
-
-      - uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/master' }}
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          github_token: ${{ secrets.ACTION_TOKEN }}
-          publish_dir: ./build
+          node-version: lts/*
+
+      - name: Build step
+        run: "npm install && npm run build" # 📝 Update the build command(s) if necessary
+
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: "palworld-setting-generator"
+          entrypoint: "mod.ts" # 📝 Update the entrypoint if necessary
+          root: "build" # 📝 Update the root if necessary
