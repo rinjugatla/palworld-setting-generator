@@ -1,0 +1,766 @@
+[
+    {
+        "version": "0.1.2.0",
+        "settings": [
+            {
+                "key": "Difficulty",
+                "description": "ゲームの難易度",
+                "type": "planetext",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": "None",
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "DayTimeSpeedRate",
+                "description": "昼の経過速度",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "NightTimeSpeedRate",
+                "description": "夜の経過速度",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "ExpRate",
+                "description": "経験値の入手倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PalCaptureRate",
+                "description": "捕獲確率の倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PalSpawnNumRate",
+                "description": "パル出現倍率(パフォーマンスに影響)",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PalDamageRateAttack",
+                "description": "パルの与えるダメージ倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PalDamageRateDefense",
+                "description": "パルの受けるダメージ倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PlayerDamageRateAttack",
+                "description": "プレイヤーの与えるダメージ倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PlayerDamageRateDefense",
+                "description": "プレイヤーの受けるダメージ倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PlayerStomachDecreaceRate",
+                "description": "プレイヤーの満腹度減少倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PlayerStaminaDecreaceRate",
+                "description": "プレイヤーのスタミナ減少倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PlayerAutoHPRegeneRate",
+                "description": "プレイヤーのHP自然回復倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PlayerAutoHpRegeneRateInSleep",
+                "description": "プレイヤーの睡眠時HP回復倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PalStomachDecreaceRate",
+                "description": "パルの満腹度減少倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PalStaminaDecreaceRate",
+                "description": "パルのスタミナ減少倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PalAutoHPRegeneRate",
+                "description": "パルのHP自然回復倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PalAutoHpRegeneRateInSleep",
+                "description": "パルの睡眠時HP回復倍率(パルボックス内)",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+
+            {
+                "key": "BuildObjectDamageRate",
+                "description": "建築物に対するダメージ倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "BuildObjectDeteriorationDamageRate",
+                "description": "建築物の劣化速度倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "CollectionDropRate",
+                "description": "採集アイテムの入手量倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "CollectionObjectHpRate",
+                "description": "採集オブジェクトのHP倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "CollectionObjectRespawnSpeedRate",
+                "description": "採集オブジェクトのリスポーン間隔倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "EnemyDropItemRate",
+                "description": "ドロップアイテム量の倍率",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "DeathPenalty",
+                "description": "デスペナルティ",
+                "type": "string",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": "None",
+                        "description": "ドロップなし"
+                    },
+                    {
+                        "value": "Item",
+                        "description": "アイテムをドロップ"
+                    },
+                    {
+                        "value": "ItemAndEquipment",
+                        "description": "アイテムをドロップ"
+                    },
+                    {
+                        "value": "All",
+                        "description": "すべてドロップ",
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bEnablePlayerToPlayerDamage",
+                "description": "PvP許可",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": false,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bEnableFriendlyFire",
+                "description": "フレンドリーファイア有効化",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": false,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bEnableInvaderEnemy",
+                "description": "侵略エネミーの有効化",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": true,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bActiveUNKO",
+                "description": "アクティブなうんこ",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": false,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bEnableAimAssistPad",
+                "description": "ゲームパッドのエイムアシストの有効化",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": true,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bEnableAimAssistKeyboard",
+                "description": "キーボードのエイムアシストの有効化",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": false,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "DropItemMaxNum",
+                "description": "ドロップアイテム最大数",
+                "type": "int",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": 3000,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "DropItemMaxNum_UNKO",
+                "description": "うんこドロップの最大数",
+                "type": "int",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": 100,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "BaseCampMaxNum",
+                "description": "キャンプの最大数",
+                "type": "int",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": 128,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "BaseCampWorkerMaxNum",
+                "description": "キャンプの働き手の最大数",
+                "type": "int",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": 15,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "DropItemAliveMaxHours",
+                "description": "ドロップアイテムの有効な時間(単位: hour)",
+                "type": "float",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bAutoResetGuildNoOnlinePlayers",
+                "description": "プレイヤーがオンラインでない場合ギルドを初期化するか",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": false,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "AutoResetGuildTimeNoOnlinePlayers",
+                "description": "プレイヤーがオンラインでない場合にギルドを初期化する期限(単位: hour)",
+                "type": "float",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": 72.000000,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "GuildPlayerMaxNum",
+                "description": "ギルドの最大人数",
+                "type": "int",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 20,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PalEggDefaultHatchingTime",
+                "description": "キョダイタマゴの孵化にかかる時間(単位: hour)",
+                "type": "float",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 72.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "WorkSpeedRate",
+                "description": "仕事速度倍率",
+                "type": "float",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": 1.0,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bIsMultiplay",
+                "description": "マルチプレイか",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": false,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bIsPvP",
+                "description": "PvPか",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": false,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bCanPickupOtherGuildDeathPenaltyDrop",
+                "description": "他のギルド所属者がデスドロップを拾えるか",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": false,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bEnableNonLoginPenalty",
+                "description": "未ログインによるペナルティの有効化",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": true,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bEnableFastTravel",
+                "description": "ファストトラベルの有効化",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": true,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bIsStartLocationSelectByMap",
+                "description": "開始位置をマップから選ぶ機能の有効化",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": true,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bExistPlayerAfterLogout",
+                "description": "ログアウト後もプレイヤーを存在させるか（？）",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": false,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bEnableDefenseOtherGuildPlayer",
+                "description": "他のギルドからの防衛を有効化",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": false,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "CoopPlayerMaxNum",
+                "description": "協力プレイの最大人数",
+                "type": "int",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": 4,
+                        "defalut": true
+                    }
+                ]
+            },
+            
+            {
+                "key": "ServerPlayerMaxNum",
+                "description": "サーバの最大人数",
+                "type": "int",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 32,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "ServerName",
+                "description": "サーバ名(環境依存文字は使用しないほうが無難)",
+                "type": "string",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": "Default Palworld Server",
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "ServerDescription",
+                "description": "サーバ説明(環境依存文字は使用しないほうが無難)",
+                "type": "string",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": "",
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "AdminPassword",
+                "description": "アドミンパスワード(RCONパスも同様)",
+                "type": "string",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": "",
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "ServerPassword",
+                "description": "サーバパスワード(入場者を限定したい場合などに利用)",
+                "type": "string",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": "",
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PublicPort",
+                "description": "ポート番号",
+                "type": "int",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 8211,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "PublicIP",
+                "description": "パブリックIP(ゲーム側が自動設定するがうまく動作しない場合は指定すること)",
+                "type": "string",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": "",
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "RCONEnabled",
+                "description": "RCONを有効化(有効化する場合はアドミンパスワードを設定することを推奨)",
+                "type": "bool",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": false,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "RCONPort",
+                "description": "RCONポート番号",
+                "type": "int",
+                "enabled": true,
+                "values": [
+                    {
+                        "value": 25575,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "Region",
+                "description": "サーバリージョン",
+                "type": "string",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": "",
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "bUseAuth",
+                "description": "認証",
+                "type": "bool",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": true,
+                        "defalut": true
+                    }
+                ]
+            },
+            {
+                "key": "BanListURL",
+                "description": "バンリスト",
+                "type": "string",
+                "enabled": false,
+                "values": [
+                    {
+                        "value": "https://api.palworldgame.com/api/banlist.txt",
+                        "defalut": true
+                    }
+                ]
+            }
+        ]
+    }
+]
