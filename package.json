@@ -36,9 +36,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-static": "^3.0.1",
 		"flowbite": "^2.2.1",
 		"flowbite-svelte": "^0.44.22",
 		"flowbite-svelte-blocks": "^1.1.0",
-		"flowbite-svelte-icons": "^1.0.2"
+		"flowbite-svelte-icons": "^1.0.2",
+		"svelte-preprocess": "^5.1.3"
 	}
 }
