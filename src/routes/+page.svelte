@@ -275,7 +275,12 @@
 				{#each selectedVersionSettings as setting}
 					{#if setting.type === 'planetext'}
 						<div class="sm:col-span-2">
-							<Label for={setting.key} class="mb-2">{setting.description}</Label>
+							<Label
+								for={setting.key}
+								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
+									? 'text-gray-400'
+									: 'text-gray-900'}">{setting.description}</Label
+							>
 							{#if setting.values.length === 1}
 								<Input
 									type="text"
@@ -295,7 +300,12 @@
 						</div>
 					{:else if setting.type === 'string'}
 						<div class="sm:col-span-2">
-							<Label for={setting.key} class="mb-2">{setting.description}</Label>
+							<Label
+								for={setting.key}
+								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
+									? 'text-gray-400'
+									: 'text-gray-900'}">{setting.description}</Label
+							>
 							{#if setting.values.length === 1}
 								<Input
 									type="text"
@@ -315,7 +325,12 @@
 						</div>
 					{:else if setting.type === 'int'}
 						<div class="sm:col-span-2">
-							<Label for={setting.key} class="mb-2">{setting.description}</Label>
+							<Label
+								for={setting.key}
+								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
+									? 'text-gray-400'
+									: 'text-gray-900'}">{setting.description}</Label
+							>
 							<Input
 								type="number"
 								id={setting.key}
@@ -326,7 +341,12 @@
 						</div>
 					{:else if setting.type === 'float'}
 						<div class="sm:col-span-2">
-							<Label for={setting.key} class="mb-2">{setting.description}</Label>
+							<Label
+								for={setting.key}
+								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
+									? 'text-gray-400'
+									: 'text-gray-900'}">{setting.description}</Label
+							>
 							<Input
 								type="number"
 								step="0.1"
@@ -347,9 +367,16 @@
 						</div>
 					{:else if setting.type === 'bool'}
 						<div class="sm:col-span-2">
-							<Label for={setting.key}>{setting.description}</Label>
+							<Label
+								for={setting.key}
+								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
+									? 'text-gray-400'
+									: 'text-gray-900'}">{setting.description}</Label
+							>
 							<Checkbox
-								class="mb-2"
+								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
+									? 'text-gray-400'
+									: 'text-gray-900'}"
 								bind:checked={formValues[setting.key].value}
 								disabled={!(setting.enabled || forceEnableDisabledItems)}>有効化</Checkbox
 							>
