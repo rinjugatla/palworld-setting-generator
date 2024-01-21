@@ -258,8 +258,7 @@
 							<Checkbox
 								class="mb-2"
 								bind:checked={formValues[setting.key].value}
-								disabled={!(setting.enabled || forceEnableDisabledItems)}
-								>有効化</Checkbox
+								disabled={!(setting.enabled || forceEnableDisabledItems)}>有効化</Checkbox
 							>
 						</div>
 					{/if}
