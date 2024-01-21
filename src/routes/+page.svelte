@@ -156,7 +156,7 @@
 			</div>
 		</Alert>
 
-		<form on:submit={handleSubmit}>
+		<form on:submit|preventDefault={handleSubmit}>
 			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 				{#each selectedVersionSettings as setting}
 					{#if setting.type === 'planetext'}
