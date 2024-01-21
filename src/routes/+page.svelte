@@ -50,7 +50,7 @@
 			const name = value.defalut ? `${value.value}(デフォルト)` : value.value.toString();
 			items.push({
 				value: value.value,
-				name: name
+				name: value.description as string
 			});
 		});
 		return items;
