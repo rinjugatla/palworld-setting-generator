@@ -14,10 +14,6 @@
 	import { InfoCircleSolid } from 'flowbite-svelte-icons';
 	import type { FormValues, IPalworldServerSettings } from '$lib/types';
 
-	const handleSubmit = () => {
-		alert('Form submited.');
-	};
-
 	/**
 	 * サーババージョンをすべて取得
 	 */
@@ -132,6 +128,93 @@
 	};
 
 	/**
+	 * 設定ファイルを作成
+	 */
+	const generateSettingFile = () => {
+		const fileName = "PalWorldSettings.ini";
+		const fileType = 'text/plain';
+
+		const text = createServerSettingFileText();
+		const blob = new Blob([text], { type: fileType });
+
+		const tempA = document.createElement('a');
+		tempA.download = fileName;
+		tempA.href = URL.createObjectURL(blob);
+		tempA.dataset.downloadurl = [fileType, tempA.download, tempA.href].join(':');
+		tempA.style.display = "none";
+		document.body.appendChild(tempA);
+		tempA.click();
+		document.body.removeChild(tempA);
+		setTimeout(function() { URL.revokeObjectURL(tempA.href); }, 1500);
+	};
+
+	/**
+	 * フォームの設定値からサーバの設定用テキストを作成(prefixを合わせた内容)
+	 */
+	const createServerSettingFileText = (): string => {
+		const settingFormat = selectedServerSettingFormat();
+		const formText = createFormSettingText();
+		const serverSettingText = settingFormat.replace(":GENERATE_SETTINGS:", formText);
+		return serverSettingText;
+	}
+
+	/**
+	 * フォームの設定値からサーバ設定用のテキストを作成(値部分)
+	 */
+	const createFormSettingText = (): string => {
+		const formatedValues: string[] = [];
+		// フォーム入力値は辞書型で順不同なので順番を保証する
+		selectedVersionSettings.forEach((value) => {
+			const formValue = formValues[value.key];
+			let formated = '';
+			// TODO: FormValueをinterfaceからclassにしてclass側でフォーマットする
+			switch (formValue.type) {
+				case 'planetext':
+					// 書式: key=planetext
+					formated = formValue.value.toString();
+					break;
+				case 'string':
+					// 書式: key="string"
+					formated = `\"${formValue.value.toString()}\"`;
+					break;
+				case 'int':
+					// 書式: key=123
+					const intNumber = Math.trunc(formValue.value as number);
+					formated = intNumber.toString();
+					break;
+				case 'float':
+					// 書式: key=1.000000
+					const floatNumber = formValue.value as number;
+					formated = floatNumber.toFixed(6);
+					break;
+				case 'bool':
+					// 書式: key:True
+					const bool = formValue.value as boolean;
+					formated = bool ? 'True' : 'False';
+					break;
+				default:
+					console.warn('未対応');
+					break;
+			}
+
+			formatedValues.push(`${formValue.key}=${formated}`);
+		});
+
+		const text = formatedValues.join(',');
+		return text;
+	};
+
+	/**
+	 * 選択中のサーババージョンのサーバ設定書式
+	 */
+	const selectedServerSettingFormat = () => {
+		const format = palworldServerSettings.filter(
+			(settings) => settings.version === selectedServerVersion
+		)[0].server_setting_file_format;
+		return format;
+	};
+
+	/**
 	 * 初期化
 	 */
 	const init = () => {
@@ -177,7 +260,7 @@
 			</div>
 		</Alert>
 
-		<form on:submit|preventDefault={handleSubmit}>
+		<form on:submit|preventDefault={generateSettingFile}>
 			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 				{#each selectedVersionSettings as setting}
 					{#if setting.type === 'planetext'}
