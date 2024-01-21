@@ -81,6 +81,8 @@
 		return typed;
 	};
 
+	// 無効化された項目を有効化
+	let forceEnableDisabledItems = false;
 	let selectedServerVersion: string;
 	let selectedVersionSettings: IPalworldServerSettings;
 	let formValues: FormValues = {};
@@ -149,7 +151,7 @@
 				</div>
 				<div class="sm:col-span-2">
 					<Label for="EnableAllItems" class="mb-2">無効化された項目を有効化</Label>
-					<Checkbox class="mb-2" checked={false}>有効化</Checkbox>
+					<Checkbox class="mb-2" bind:checked={forceEnableDisabledItems}>有効化</Checkbox>
 				</div>
 			</div>
 		</Alert>
@@ -165,7 +167,7 @@
 									type="text"
 									id={setting.key}
 									bind:value={formValues[setting.key].value}
-									disabled={!setting.enabled}
+									disabled={!(setting.enabled || forceEnableDisabledItems)}
 									required
 								/>
 							{:else}
@@ -173,6 +175,7 @@
 									class="mt-2"
 									items={selectionItems(setting.key)}
 									bind:value={formValues[setting.key].value}
+									disabled={!(setting.enabled || forceEnableDisabledItems)}
 								/>
 							{/if}
 						</div>
@@ -184,13 +187,14 @@
 									type="text"
 									id={setting.key}
 									bind:value={formValues[setting.key].value}
-									disabled={!setting.enabled}
+									disabled={!(setting.enabled || forceEnableDisabledItems)}
 									required
 								/>
 							{:else}
 								<Select
 									class="mt-2"
 									items={selectionItems(setting.key)}
+									disabled={!(setting.enabled || forceEnableDisabledItems)}
 									bind:value={formValues[setting.key].value}
 								/>
 							{/if}
@@ -202,7 +206,7 @@
 								type="number"
 								id={setting.key}
 								bind:value={formValues[setting.key].value}
-								disabled={!setting.enabled}
+								disabled={!(setting.enabled || forceEnableDisabledItems)}
 								required
 							/>
 						</div>
@@ -214,7 +218,7 @@
 								step="0.1"
 								id={setting.key}
 								bind:value={formValues[setting.key].value}
-								disabled={!setting.enabled}
+								disabled={!(setting.enabled || forceEnableDisabledItems)}
 								required
 							/>
 							<Range
@@ -224,7 +228,7 @@
 								max={Math.max(defaultSettingNumberValue(setting.key) * 2, 5)}
 								step="0.1"
 								bind:value={formValues[setting.key].value}
-								disabled={!setting.enabled}
+								disabled={!(setting.enabled || forceEnableDisabledItems)}
 							/>
 						</div>
 					{:else if setting.type === 'bool'}
@@ -233,7 +237,8 @@
 							<Checkbox
 								class="mb-2"
 								bind:checked={formValues[setting.key].value}
-								disabled={!setting.enabled}>有効化</Checkbox
+								disabled={!(setting.enabled || forceEnableDisabledItems)}
+								>有効化</Checkbox
 							>
 						</div>
 					{/if}
