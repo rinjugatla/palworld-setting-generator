@@ -1,6 +1,7 @@
 [
     {
         "version": "0.1.2.0",
+        "server_setting_file_format": "; This configuration file is a sample of the default server settings.\n; Changes to this file will NOT be reflected on the server.\n; To change the server settings, modify Pal/Saved/Config/WindowsServer/PalWorldSettings.ini.\n[/Script/Pal.PalGameWorldSettings]\nOptionSettings=(:GENERATE_SETTINGS:)",
         "settings": [
             {
                 "key": "Difficulty",

@@ -1,6 +1,7 @@
 // パルワールドサーバ設定json
 export interface IPalworldServerVersionSettings {
     version: string;
+    server_setting_file_format: string;
     settings: IPalworldServerSettings;
 }
 
