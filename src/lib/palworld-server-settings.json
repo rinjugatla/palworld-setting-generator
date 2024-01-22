@@ -739,6 +739,8 @@
                 "type": "int",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 1,
+                "max": 65535,
                 "values": [
                     {
                         "value": 8211,
@@ -778,6 +780,8 @@
                 "type": "int",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 1,
+                "max": 65535,
                 "values": [
                     {
                         "value": 25575,
