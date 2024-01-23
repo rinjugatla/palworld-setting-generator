@@ -189,12 +189,12 @@
 					break;
 				case 'int':
 					// 書式: key=123
-					const intNumber = Math.trunc(formValue.value as number);
+					const intNumber = Math.trunc(Number(formValue.value));
 					formated = intNumber.toString();
 					break;
 				case 'float':
 					// 書式: key=1.000000
-					const floatNumber = formValue.value as number;
+					const floatNumber = parseFloat(formValue.value as string);
 					formated = floatNumber.toFixed(6);
 					break;
 				case 'bool':
