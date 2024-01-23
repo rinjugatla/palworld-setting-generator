@@ -452,7 +452,7 @@
 					{#if Object.values(formValues).filter(value => value.allow_empty === false && value.value === '').length > 0 || 
 						Object.values(formValues).filter(value => value.max != null && Number(value.value) > value.max).length > 0 || 
 						Object.values(formValues).filter(value => value.min != null && value.min > Number(value.value)).length > 0}
-								<Alert color="yellow">
+						<Alert color="yellow" border>
 							<InfoCircleSolid slot="icon" class="w-4 h-4" />
 							設定値が不正です。必須項目の確認と入力可能な範囲を超えた数値がないか確認してください。
 						</Alert>	
