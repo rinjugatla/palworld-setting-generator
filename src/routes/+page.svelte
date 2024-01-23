@@ -86,6 +86,8 @@
 		return typed;
 	};
 
+	// フォーム
+	let formElement: Element;
 	// 無効化された項目を有効化
 	let forceEnableDisabledItems = false;
 	// 選択中のサーババージョン
@@ -116,7 +118,8 @@
 			formValues[setting.key] = {
 				key: setting.key,
 				value: defaultSettingValue(setting.key),
-				type: setting.type
+				type: setting.type,
+				allow_empty: setting.allow_empty
 			};
 		});
 	};
@@ -270,7 +273,7 @@
 			</div>
 		</Alert>
 
-		<form on:submit|preventDefault={generateSettingFile}>
+		<form bind:this={formElement} on:submit|preventDefault={generateSettingFile}>
 			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 				{#each selectedVersionSettings as setting}
 					{#if setting.type === 'planetext'}
@@ -388,13 +391,20 @@
 				{/each}
 
 				<div class="sm:col-span-2">
-					<Label for="server-setting-text">設定ファイルテキスト</Label>
-					<Textarea
-						id="server-setting-text"
-						rows="15"
-						bind:value={serverSettingFileText}
-						readonly
-					/>
+					<Label for="server-setting-text m-2">設定ファイルテキスト</Label>
+					{#if Object.values(formValues).filter(value => value.allow_empty === false).find(value => value.value === '')}
+						<Alert color="yellow">
+							<InfoCircleSolid slot="icon" class="w-4 h-4" />
+							設定の必要な項目に入力がありません。
+						</Alert>	
+					{:else}
+						<Textarea
+							id="server-setting-text"
+							rows="15"
+							bind:value={serverSettingFileText}
+							readonly
+							/>	
+					{/if}
 				</div>
 
 				<div class="sm:col-span-2">

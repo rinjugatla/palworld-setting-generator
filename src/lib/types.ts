@@ -60,6 +60,7 @@ export interface FormValue {
     key:  string;
     value: string | number | boolean;
     type: FormValueType;
+    allow_empty: boolean;
 }
 
 export type FormValueType = "planetext" | "string" | "float" | "int" | "bool";
