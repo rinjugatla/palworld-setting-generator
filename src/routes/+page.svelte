@@ -282,8 +282,12 @@
 								for={setting.key}
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
-									: 'text-gray-900'}">{setting.description}</Label
-							>
+									: 'text-gray-900'}">
+									{setting.description}
+									{#if !setting.allow_empty}
+										<span class="text-red-500">*</span>
+									{/if}
+							</Label>
 							{#if setting.values.length === 1}
 								<Input
 									type="text"
@@ -307,8 +311,12 @@
 								for={setting.key}
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
-									: 'text-gray-900'}">{setting.description}</Label
-							>
+									: 'text-gray-900'}">
+									{setting.description}
+									{#if !setting.allow_empty}
+										<span class="text-red-500">*</span>
+									{/if}
+								</Label>
 							{#if setting.values.length === 1}
 								<Input
 									type="text"
@@ -332,8 +340,12 @@
 								for={setting.key}
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
-									: 'text-gray-900'}">{setting.description}</Label
-							>
+									: 'text-gray-900'}">
+									{setting.description}
+									{#if !setting.allow_empty}
+										<span class="text-red-500">*</span>
+									{/if}
+								</Label>
 							<Input
 								type="number"
 								id={setting.key}
@@ -350,8 +362,12 @@
 								for={setting.key}
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
-									: 'text-gray-900'}">{setting.description}</Label
-							>
+									: 'text-gray-900'}">
+									{setting.description}
+									{#if !setting.allow_empty}
+										<span class="text-red-500">*</span>
+									{/if}
+								</Label>
 							<Input
 								type="number"
 								step="0.1"
@@ -377,8 +393,12 @@
 								for={setting.key}
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
-									: 'text-gray-900'}">{setting.description}</Label
-							>
+									: 'text-gray-900'}">
+									{setting.description}
+									{#if !setting.allow_empty}
+										<span class="text-red-500">*</span>
+									{/if}
+								</Label>
 							<Checkbox
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
