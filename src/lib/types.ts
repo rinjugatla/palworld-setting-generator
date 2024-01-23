@@ -10,6 +10,7 @@ export type IPalworldServerSettings = (BoolSetting | NumberSetting | StringSetti
 export interface BoolSetting {
     key: string;
     description: string;
+    additional_info?: string;
     type: "bool";
     enabled: boolean;
     allow_empty: boolean;
@@ -23,9 +24,12 @@ export interface BoolSetting {
 export interface NumberSetting {
     key: string;
     description: string;
+    additional_info?: string;
     type: "float" | "int";
     enabled: boolean;
     allow_empty: boolean;
+    min?: number;
+    max?: number;
     values: {
         value: number;
         defalut?: boolean;
@@ -36,6 +40,7 @@ export interface NumberSetting {
 export interface StringSetting {
     key: string;
     description: string;
+    additional_info?: string;
     type: "planetext" | "string";
     enabled: boolean;
     allow_empty: boolean;

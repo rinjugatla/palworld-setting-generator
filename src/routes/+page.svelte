@@ -189,12 +189,12 @@
 					break;
 				case 'int':
 					// 書式: key=123
-					const intNumber = Math.trunc(formValue.value as number);
+					const intNumber = Math.trunc(Number(formValue.value));
 					formated = intNumber.toString();
 					break;
 				case 'float':
 					// 書式: key=1.000000
-					const floatNumber = formValue.value as number;
+					const floatNumber = parseFloat(formValue.value as string);
 					formated = floatNumber.toFixed(6);
 					break;
 				case 'bool':
@@ -334,6 +334,8 @@
 							<Input
 								type="number"
 								id={setting.key}
+								min={'min' in setting ? setting.min : 0}
+								max={'max' in setting ? setting.max : null}
 								bind:value={formValues[setting.key].value}
 								disabled={!(setting.enabled || forceEnableDisabledItems)}
 								required={!setting.allow_empty}
@@ -351,6 +353,7 @@
 								type="number"
 								step="0.1"
 								id={setting.key}
+								min="0"
 								bind:value={formValues[setting.key].value}
 								disabled={!(setting.enabled || forceEnableDisabledItems)}
 								required={!setting.allow_empty}

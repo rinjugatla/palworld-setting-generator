@@ -710,6 +710,7 @@
             {
                 "key": "AdminPassword",
                 "description": "アドミンパスワード(RCONパスも同様)",
+                "additional_info": "ゲーム内から管理者権限を取得する場合は15文字以内で設定します。",
                 "type": "string",
                 "enabled": true,
                 "allow_empty": false,
@@ -722,7 +723,8 @@
             },
             {
                 "key": "ServerPassword",
-                "description": "サーバパスワード(入場者を限定したい場合などに利用)",
+                "description": "サーバパスワード(入場者を限定したい場合に利用)",
+                "additional_info": "IP接続ではサーバパスワードのあるサーバに接続できません。",
                 "type": "string",
                 "enabled": true,
                 "allow_empty": true,
@@ -736,9 +738,12 @@
             {
                 "key": "PublicPort",
                 "description": "ポート番号",
+                "additional_info": "この設定は機能していないかもしれません。接続できない場合はサーバ起動にオプションをつけます。\n例: PalServer.exe -publicport=8111",
                 "type": "int",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 1,
+                "max": 65535,
                 "values": [
                     {
                         "value": 8211,
@@ -748,7 +753,8 @@
             },
             {
                 "key": "PublicIP",
-                "description": "パブリックIP(ゲーム側が自動設定するがうまく動作しない場合は指定すること)",
+                "description": "パブリックIP",
+                "additional_info": "ゲーム側が自動設定するがうまく動作しない場合は指定します。",
                 "type": "string",
                 "enabled": true,
                 "allow_empty": true,
@@ -761,7 +767,8 @@
             },
             {
                 "key": "RCONEnabled",
-                "description": "RCONを有効化(有効化する場合はアドミンパスワードを設定することを推奨)",
+                "description": "RCONを有効化",
+                "additional_info": "有効化する場合はアドミンパスワードを設定することを推奨",
                 "type": "bool",
                 "enabled": true,
                 "allow_empty": false,
@@ -778,6 +785,8 @@
                 "type": "int",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 1,
+                "max": 65535,
                 "values": [
                     {
                         "value": 25575,
