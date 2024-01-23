@@ -395,10 +395,7 @@
 									? 'text-gray-400'
 									: 'text-gray-900'}">
 									{setting.description}
-									{#if !setting.allow_empty}
-										<span class="text-red-500">*</span>
-									{/if}
-								</Label>
+							</Label>
 							<Checkbox
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
