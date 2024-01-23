@@ -5,7 +5,8 @@ export interface IPalworldServerVersionSettings {
     settings: IPalworldServerSettings;
 }
 
-export type IPalworldServerSettings = (BoolSetting | NumberSetting | StringSetting)[];
+export type IPalworldServerSetting = (BoolSetting | NumberSetting | StringSetting);
+export type IPalworldServerSettings = IPalworldServerSetting[];
 
 export interface BoolSetting {
     key: string;
@@ -60,6 +61,9 @@ export interface FormValue {
     key:  string;
     value: string | number | boolean;
     type: FormValueType;
+    allow_empty: boolean;
+    max?: number | null;
+    min?: number | null;
 }
 
 export type FormValueType = "planetext" | "string" | "float" | "int" | "bool";

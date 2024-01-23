@@ -13,7 +13,7 @@
 	} from 'flowbite-svelte';
 	import { palworldServerSettings } from '$lib/palworld-server-serttings';
 	import { InfoCircleSolid } from 'flowbite-svelte-icons';
-	import type { FormValues, IPalworldServerSettings } from '$lib/types';
+	import type { FormValues, IPalworldServerSetting, IPalworldServerSettings } from '$lib/types';
 
 	/**
 	 * サーババージョンをすべて取得
@@ -86,6 +86,8 @@
 		return typed;
 	};
 
+	// フォーム
+	let formElement: Element;
 	// 無効化された項目を有効化
 	let forceEnableDisabledItems = false;
 	// 選択中のサーババージョン
@@ -116,10 +118,51 @@
 			formValues[setting.key] = {
 				key: setting.key,
 				value: defaultSettingValue(setting.key),
-				type: setting.type
+				type: setting.type,
+				allow_empty: setting.allow_empty,
+				max: formValueMax(setting),
+				min: formValueMin(setting)
 			};
 		});
 	};
+
+	/**
+	 * フォームの最小値
+	 * @param setting 設定
+	 */
+	const formValueMin = (setting: IPalworldServerSetting): (null | number)=> {
+		switch (setting.type) {
+			case 'planetext':
+			case 'string':
+			case 'bool':
+				return null
+			case 'int':
+			case 'float':
+				const min = 'min' in setting ? setting.min! : 0;
+				return min;
+			default:
+				return null;
+		}
+	}
+
+	/**
+	 * フォームの最小値
+	 * @param setting 設定
+	 */
+	const formValueMax = (setting: IPalworldServerSetting): (null | number)=> {
+		switch (setting.type) {
+			case 'planetext':
+			case 'string':
+			case 'bool':
+				return null
+			case 'int':
+			case 'float':
+				const min = 'max' in setting ? setting.max! : null;
+				return min;
+			default:
+				return null;
+		}
+}
 
 	/**
 	 * サーババージョンの変更
@@ -270,7 +313,7 @@
 			</div>
 		</Alert>
 
-		<form on:submit|preventDefault={generateSettingFile}>
+		<form bind:this={formElement} on:submit|preventDefault={generateSettingFile}>
 			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 				{#each selectedVersionSettings as setting}
 					{#if setting.type === 'planetext'}
@@ -279,8 +322,12 @@
 								for={setting.key}
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
-									: 'text-gray-900'}">{setting.description}</Label
-							>
+									: 'text-gray-900'}">
+									{setting.description}
+									{#if !setting.allow_empty}
+										<span class="text-red-500">*</span>
+									{/if}
+							</Label>
 							{#if setting.values.length === 1}
 								<Input
 									type="text"
@@ -304,8 +351,12 @@
 								for={setting.key}
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
-									: 'text-gray-900'}">{setting.description}</Label
-							>
+									: 'text-gray-900'}">
+									{setting.description}
+									{#if !setting.allow_empty}
+										<span class="text-red-500">*</span>
+									{/if}
+								</Label>
 							{#if setting.values.length === 1}
 								<Input
 									type="text"
@@ -329,8 +380,12 @@
 								for={setting.key}
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
-									: 'text-gray-900'}">{setting.description}</Label
-							>
+									: 'text-gray-900'}">
+									{setting.description}
+									{#if !setting.allow_empty}
+										<span class="text-red-500">*</span>
+									{/if}
+								</Label>
 							<Input
 								type="number"
 								id={setting.key}
@@ -347,8 +402,12 @@
 								for={setting.key}
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
-									: 'text-gray-900'}">{setting.description}</Label
-							>
+									: 'text-gray-900'}">
+									{setting.description}
+									{#if !setting.allow_empty}
+										<span class="text-red-500">*</span>
+									{/if}
+								</Label>
 							<Input
 								type="number"
 								step="0.1"
@@ -374,8 +433,9 @@
 								for={setting.key}
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
-									: 'text-gray-900'}">{setting.description}</Label
-							>
+									: 'text-gray-900'}">
+									{setting.description}
+							</Label>
 							<Checkbox
 								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
 									? 'text-gray-400'
@@ -388,13 +448,22 @@
 				{/each}
 
 				<div class="sm:col-span-2">
-					<Label for="server-setting-text">設定ファイルテキスト</Label>
-					<Textarea
-						id="server-setting-text"
-						rows="15"
-						bind:value={serverSettingFileText}
-						readonly
-					/>
+					<Label for="server-setting-text m-2">設定ファイルテキスト</Label>
+					{#if Object.values(formValues).filter(value => value.allow_empty === false && value.value === '').length > 0 || 
+						Object.values(formValues).filter(value => value.max != null && Number(value.value) > value.max).length > 0 || 
+						Object.values(formValues).filter(value => value.min != null && value.min > Number(value.value)).length > 0}
+								<Alert color="yellow">
+							<InfoCircleSolid slot="icon" class="w-4 h-4" />
+							設定値が不正です。必須項目の確認と入力可能な範囲を超えた数値がないか確認してください。
+						</Alert>	
+					{:else}
+						<Textarea
+							id="server-setting-text"
+							rows="15"
+							bind:value={serverSettingFileText}
+							readonly
+							/>	
+					{/if}
 				</div>
 
 				<div class="sm:col-span-2">
