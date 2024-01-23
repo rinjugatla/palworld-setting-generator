@@ -334,6 +334,8 @@
 							<Input
 								type="number"
 								id={setting.key}
+								min={'min' in setting ? setting.min : 0}
+								max={'max' in setting ? setting.max : null}
 								bind:value={formValues[setting.key].value}
 								disabled={!(setting.enabled || forceEnableDisabledItems)}
 								required={!setting.allow_empty}
@@ -351,6 +353,7 @@
 								type="number"
 								step="0.1"
 								id={setting.key}
+								min="0"
 								bind:value={formValues[setting.key].value}
 								disabled={!(setting.enabled || forceEnableDisabledItems)}
 								required={!setting.allow_empty}
