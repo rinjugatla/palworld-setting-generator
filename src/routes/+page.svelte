@@ -19,6 +19,11 @@
 	import Contact from '$lib/components/Contact.svelte';
 	import ServerSettingOptions from '$lib/components/ServerSettingOptions.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import PlanetextSetting from '$lib/components/form/PlanetextSetting.svelte';
+	import StringSetting from '$lib/components/form/StringSetting.svelte';
+	import IntSetting from '$lib/components/form/IntSetting.svelte';
+	import FloatSetting from '$lib/components/form/FloatSetting.svelte';
+	import BoolSetting from '$lib/components/form/BoolSetting.svelte';
 
 
 
@@ -67,15 +72,7 @@
 		return typed;
 	};
 
-	/**
-	 * デフォルトの値を取得(数値用)
-	 * @param settingKey 設定キー
-	 */
-	const defaultSettingNumberValue = (settingKey: string): number => {
-		const value = defaultSettingValue(settingKey);
-		const typed = value as number;
-		return typed;
-	};
+
 
 	// フォーム
 	let formElement: Element;
@@ -285,133 +282,15 @@
 			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 				{#each selectedVersionSettings as setting}
 					{#if setting.type === 'planetext'}
-						<div class="sm:col-span-2">
-							<Label
-								for={setting.key}
-								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
-									? 'text-gray-400'
-									: 'text-gray-900'}">
-									{setting.description}
-									{#if !setting.allow_empty}
-										<span class="text-red-500">*</span>
-									{/if}
-							</Label>
-							{#if setting.values.length === 1}
-								<Input
-									type="text"
-									id={setting.key}
-									bind:value={formValues[setting.key].value}
-									disabled={!(setting.enabled || forceEnableDisabledItems)}
-									required={!setting.allow_empty}
-								/>
-							{:else}
-								<Select
-									class="mt-2"
-									items={selectionItems(setting.key)}
-									bind:value={formValues[setting.key].value}
-									disabled={!(setting.enabled || forceEnableDisabledItems)}
-								/>
-							{/if}
-						</div>
+						<PlanetextSetting {setting} {forceEnableDisabledItems} bind:formValue={formValues[setting.key]} />
 					{:else if setting.type === 'string'}
-						<div class="sm:col-span-2">
-							<Label
-								for={setting.key}
-								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
-									? 'text-gray-400'
-									: 'text-gray-900'}">
-									{setting.description}
-									{#if !setting.allow_empty}
-										<span class="text-red-500">*</span>
-									{/if}
-								</Label>
-							{#if setting.values.length === 1}
-								<Input
-									type="text"
-									id={setting.key}
-									bind:value={formValues[setting.key].value}
-									disabled={!(setting.enabled || forceEnableDisabledItems)}
-									required={!setting.allow_empty}
-								/>
-							{:else}
-								<Select
-									class="mt-2"
-									items={selectionItems(setting.key)}
-									disabled={!(setting.enabled || forceEnableDisabledItems)}
-									bind:value={formValues[setting.key].value}
-								/>
-							{/if}
-						</div>
+						<StringSetting {setting} {forceEnableDisabledItems} bind:formValue={formValues[setting.key]} />
 					{:else if setting.type === 'int'}
-						<div class="sm:col-span-2">
-							<Label
-								for={setting.key}
-								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
-									? 'text-gray-400'
-									: 'text-gray-900'}">
-									{setting.description}
-									{#if !setting.allow_empty}
-										<span class="text-red-500">*</span>
-									{/if}
-								</Label>
-							<Input
-								type="number"
-								id={setting.key}
-								min={'min' in setting ? setting.min : 0}
-								max={'max' in setting ? setting.max : null}
-								bind:value={formValues[setting.key].value}
-								disabled={!(setting.enabled || forceEnableDisabledItems)}
-								required={!setting.allow_empty}
-							/>
-						</div>
+						<IntSetting {setting} {forceEnableDisabledItems} bind:formValue={formValues[setting.key]} />
 					{:else if setting.type === 'float'}
-						<div class="sm:col-span-2">
-							<Label
-								for={setting.key}
-								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
-									? 'text-gray-400'
-									: 'text-gray-900'}">
-									{setting.description}
-									{#if !setting.allow_empty}
-										<span class="text-red-500">*</span>
-									{/if}
-								</Label>
-							<Input
-								type="number"
-								step="0.1"
-								id={setting.key}
-								min="0"
-								bind:value={formValues[setting.key].value}
-								disabled={!(setting.enabled || forceEnableDisabledItems)}
-								required={!setting.allow_empty}
-							/>
-							<Range
-								id="{setting.key}-range"
-								size="md"
-								min="0"
-								max={Math.max(defaultSettingNumberValue(setting.key) * 2, 5)}
-								step="0.1"
-								bind:value={formValues[setting.key].value}
-								disabled={!(setting.enabled || forceEnableDisabledItems)}
-							/>
-						</div>
+						<FloatSetting {setting} {forceEnableDisabledItems} bind:formValue={formValues[setting.key]} />
 					{:else if setting.type === 'bool'}
-						<div class="sm:col-span-2">
-							<Label
-								for={setting.key}
-								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
-									? 'text-gray-400'
-									: 'text-gray-900'}">
-									{setting.description}
-							</Label>
-							<Checkbox
-								class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
-									? 'text-gray-400'
-									: 'text-gray-900'}"
-								bind:checked={formValues[setting.key].value}
-								disabled={!(setting.enabled || forceEnableDisabledItems)}>有効化</Checkbox
-							>
-						</div>
+						<BoolSetting {setting} {forceEnableDisabledItems} bind:formValue={formValues[setting.key]} />
 					{/if}
 				{/each}
 
