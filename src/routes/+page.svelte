@@ -17,9 +17,10 @@
 	import FloatSetting from '$lib/components/form/FloatSetting.svelte';
 	import BoolSetting from '$lib/components/form/BoolSetting.svelte';
 	import SettingTextPreview from '$lib/components/SettingTextPreview.svelte';
+	import DownloadSettingFile from '$lib/components/DownloadSetting.svelte';
 
 	// フォーム
-	let formElement: Element;
+	let downloadElement: DownloadSettingFile;
 	// 無効化された項目を有効化
 	let forceEnableDisabledItems = false;
 	// 選択中のサーババージョン
@@ -118,29 +119,7 @@
 		initFormValues();
 	};
 
-	/**
-	 * 設定ファイルを作成
-	 */
-	const generateSettingFile = () => {
-		const fileName = 'PalWorldSettings.ini';
-		const fileType = 'text/plain';
-
-		const text = settingText;
-		console.log(text);
-		const blob = new Blob([text], { type: fileType });
-
-		const tempA = document.createElement('a');
-		tempA.download = fileName;
-		tempA.href = URL.createObjectURL(blob);
-		tempA.dataset.downloadurl = [fileType, tempA.download, tempA.href].join(':');
-		tempA.style.display = 'none';
-		document.body.appendChild(tempA);
-		tempA.click();
-		document.body.removeChild(tempA);
-		setTimeout(function () {
-			URL.revokeObjectURL(tempA.href);
-		}, 1500);
-	};
+	
 
 	/**
 	 * 初期化
@@ -165,7 +144,7 @@
 			bind:forceEnableDisabledItems={forceEnableDisabledItems} 
 			on:changeSelectVersion={changedSelectVersion}/>
 
-		<form bind:this={formElement} on:submit|preventDefault={generateSettingFile}>
+		<form on:submit|preventDefault={() => {downloadElement.downloadSetting()}}>
 			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 				{#each selectedSettings as setting}
 					{#if setting.type === 'planetext'}
@@ -183,9 +162,7 @@
 
 				<SettingTextPreview {selectedServerVersion} {selectedSettings} bind:settingText={settingText} {formValues} />
 
-				<div class="sm:col-span-2">
-					<Button type="submit" class="w-full">設定ファイルを作成</Button>
-				</div>
+				<DownloadSettingFile {settingText} bind:this={downloadElement}/>
 			</div>
 		</form>
 	</Section>
