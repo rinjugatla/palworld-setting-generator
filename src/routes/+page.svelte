@@ -1,18 +1,10 @@
 <script lang="ts">
 	import { Section } from 'flowbite-svelte-blocks';
 	import {
-		Label,
-		Input,
 		Button,
-		Select,
-		Checkbox,
-		Range,
 		type SelectOptionType,
-		Alert,
-		Textarea
 	} from 'flowbite-svelte';
 	import { palworldServerSettings } from '$lib/palworld-server-serttings';
-	import { InfoCircleSolid } from 'flowbite-svelte-icons';
 	import type { FormValues, IPalworldServerSetting, IPalworldServerSettings } from '$lib/types';
 	import Title from '$lib/components/Title.svelte';
 	import OfficialGuide from '$lib/components/OfficialGuide.svelte';
@@ -48,23 +40,6 @@
 	};
 
 	/**
-	 * 複数の選択肢を取得
-	 * @param settingKey　設定キー
-	 */
-	const selectionItems = (settingKey: string): SelectOptionType<any>[] => {
-		const setting = selectedSettings.filter((setting) => setting.key === settingKey)[0];
-		const items: SelectOptionType<any>[] = [];
-		setting.values.forEach((value) => {
-			const name = value.defalut ? `${value.value}(デフォルト)` : value.value.toString();
-			items.push({
-				value: value.value,
-				name: value.description as string
-			});
-		});
-		return items;
-	};
-
-	/**
 	 * デフォルトの選択肢を取得
 	 * @param settingKey 設定キー
 	 */
@@ -72,16 +47,6 @@
 		const setting = selectedSettings.filter((setting) => setting.key === settingKey)[0];
 		const value = setting.values.filter((value) => value.defalut)[0].value;
 		return value;
-	};
-
-	/**
-	 * デフォルトの値を取得(論理値用)
-	 * @param settingKey 設定キー
-	 */
-	const defaultSettingBoolValue = (settingKey: string): boolean => {
-		const value = defaultSettingValue(settingKey);
-		const typed = value as boolean;
-		return typed;
 	};
 
 	// リアクティブされないことがあるので再定義
