@@ -14,22 +14,12 @@
 	import { palworldServerSettings } from '$lib/palworld-server-serttings';
 	import { InfoCircleSolid } from 'flowbite-svelte-icons';
 	import type { FormValues, IPalworldServerSetting, IPalworldServerSettings } from '$lib/types';
+	import Title from '$lib/components/Title.svelte';
+	import OfficialGuide from '$lib/components/OfficialGuide.svelte';
+	import Contact from '$lib/components/Contact.svelte';
+	import ServerSettingOptions from '$lib/components/ServerSettingOptions.svelte';
 
-	/**
-	 * サーババージョンをすべて取得
-	 */
-	const selectionVersions = (): SelectOptionType<any>[] => {
-		const versions = palworldServerSettings.map((serverSettings) => serverSettings.version);
-		const items: SelectOptionType<any>[] = [];
-		versions.forEach((version) => {
-			items.push({
-				value: version,
-				name: version
-			});
-		});
 
-		return items;
-	};
 
 	/**
 	 * 最新のサーババージョン
@@ -281,60 +271,14 @@
 
 <div class="m-5">
 	<Section name="crudcreateform">
-		<h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Palworldサーバ設定</h2>
-		<Alert class="mb-4" border>
-			<InfoCircleSolid slot="icon" class="h-4 w-4" />
-			<p class="font-bold text-blue-900">
-				<a
-					href="https://tech.palworldgame.com/optimize-game-balance"
-					target="_blank"
-					rel="noopener noreferrer">公式サーバ設定解説</a
-				>
-			</p>
-			<p>
-				設定解説で解説されていない項目についてはまだ機能が実装されていないか、設定が有効ではないとして無効化しています。
-			</p>
-		</Alert>
-
-		<Alert class="mb-4" border color="blue">
-			<InfoCircleSolid slot="icon" class="h-4 w-4" />
-			<p>問い合わせ先</p>
-			<div class="flex">
-				<div class="mr-2">
-					<a
-					href="https://github.com/rinjugatla/palworld-setting-generator"
-					target="_blank"
-					rel="noopener noreferrer">GitHub</a
-				>
-				</div>
-				<div class="mx-2">
-					<a
-					href="https://twitter.com/rin_jugatla"
-					target="_blank"
-					rel="noopener noreferrer">Twitter/X: @rin_jugatla</a>
-				</div>
-				<div class="mx-2">
-					Discord: @rinjugatla
-				</div>
-			</div>
-		</Alert>
-
-		<Alert class="mb-4" border color="dark">
-			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-				<div class="sm:col-span-2">
-					<Label for="ServerVersion" class="mb-2">サーババージョン</Label>
-					<Select
-						items={selectionVersions()}
-						bind:value={selectedServerVersion}
-						on:change={changedSelectVersion}
-					/>
-				</div>
-				<div class="sm:col-span-2">
-					<Label for="EnableAllItems" class="mb-2">無効化された項目を有効化</Label>
-					<Checkbox class="mb-2" bind:checked={forceEnableDisabledItems}>有効化</Checkbox>
-				</div>
-			</div>
-		</Alert>
+		<Title />
+		<OfficialGuide />
+		<Contact />
+		<ServerSettingOptions 
+			{palworldServerSettings} 
+			bind:selectedServerVersion={selectedServerVersion} 
+			bind:forceEnableDisabledItems={forceEnableDisabledItems} 
+			on:changeSelectVersion={changedSelectVersion}/>
 
 		<form bind:this={formElement} on:submit|preventDefault={generateSettingFile}>
 			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
