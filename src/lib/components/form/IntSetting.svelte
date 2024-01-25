@@ -1,6 +1,8 @@
 <script lang="ts">
 	import type { FormValue, NumberSetting } from "$lib/types";
 	import { Input, Label } from "flowbite-svelte";
+	import AdditionalInfo from "./AdditionalInfo.svelte";
+	import { formLabelTextColor } from "$lib/common";
 
     /**
      * 設定
@@ -14,18 +16,22 @@
      * フォーム入力情報
      */
     export let formValue: FormValue;
+    /**
+     * テキストカラー
+     */
+    let textColor: string;
+    $: textColor = formLabelTextColor(setting, forceEnableDisabledItems);
 </script>
 
 <div class="sm:col-span-2">
     <Label
         for={setting.key}
-        class="mb-2 {!(setting.enabled || forceEnableDisabledItems)
-            ? 'text-gray-400'
-            : 'text-gray-900'}">
+        class="mb-2 {textColor}">
             {setting.description}
             {#if !setting.allow_empty}
                 <span class="text-red-500">*</span>
             {/if}
+            <AdditionalInfo {textColor} {setting} />
         </Label>
     <Input
         type="number"
