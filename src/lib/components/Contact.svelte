@@ -15,12 +15,6 @@
         >
         </div>
         <div class="mx-2">
-            <a
-            href="https://twitter.com/rin_jugatla"
-            target="_blank"
-            rel="noopener noreferrer">Twitter/X: @rin_jugatla</a>
-        </div>
-        <div class="mx-2">
             Discord: @rinjugatla
         </div>
     </div>
