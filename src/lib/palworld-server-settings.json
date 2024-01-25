@@ -319,7 +319,7 @@
             {
                 "key": "DeathPenalty",
                 "description": "デスペナルティ",
-                "type": "string",
+                "type": "planetext",
                 "enabled": true,
                 "allow_empty": false,
                 "values": [
