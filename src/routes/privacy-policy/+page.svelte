@@ -4,7 +4,7 @@
 </script>
 
 <div class="m-5">
-	<Section name="faq">
+	<Section name="crudcreateform">
 		<h2 class="mb-8 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
 			プライバシーポリシー
 		</h2>
