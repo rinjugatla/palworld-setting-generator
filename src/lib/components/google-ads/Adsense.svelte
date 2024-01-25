@@ -4,7 +4,6 @@
     let loaded = false;
     onMount(() => {
         loaded = true;
-        console.log(loaded);
     })
 </script>
 
