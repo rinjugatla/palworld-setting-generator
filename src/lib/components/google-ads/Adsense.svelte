@@ -1,7 +1,13 @@
-<script lang="">
-	export let enabled = false;
+<script lang="ts">
+	import { onMount } from "svelte";
+
+    let loaded = false;
+    onMount(() => {
+        loaded = true;
+        console.log(loaded);
+    })
 </script>
 
 <svelte:head>
-	<script data-ad-client="ca-pub-4388498410633493" async src={enabled ? 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' : null}></script>
+	<script crossorigin="anonymous" async src={loaded ? 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4388498410633493' : null}></script>
 </svelte:head>
