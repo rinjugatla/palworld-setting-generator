@@ -26,17 +26,19 @@
 						<Li>
 							支援者様リストへのお名前の掲載
 							<List tag="ol" class="mt-2 space-y-1 ps-5">
-								<Li>希望される方のみ</Li>
+								<Li>希望される方のみになります。</Li>
+								<Li>公序良俗に反するお名前は掲載できません。ご了承ください。</Li>
 							</List>
 						</Li>
 					</List>
 					<List tag="ul" class="mb-2 space-y-2 text-gray-500 dark:text-gray-400">
 						<Li>
-							Palworldサーバ関係についてDiscordのDMによるサポート
+							Palworldサーバ関係についてのDiscordのDMによるサポート
 							<List tag="ol" class="mt-2 space-y-1 ps-5">
-								<Li>希望される方のみ</Li>
+								<Li>5000円以上の支援をしていただいた方のみになります。</Li>
                                 <Li>問題の解決をお約束するものではありません。</Li>
 								<Li>永続的なサポートはできません。</Li>
+								<Li>即座のサポートを保証しません。</Li>
 							</List>
 						</Li>
 					</List>
