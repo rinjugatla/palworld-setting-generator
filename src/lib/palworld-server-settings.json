@@ -724,7 +724,6 @@
             {
                 "key": "ServerPassword",
                 "description": "サーバパスワード(入場者を限定したい場合に利用)",
-                "additional_info": "IP接続ではサーバパスワードのあるサーバに接続できません。",
                 "type": "string",
                 "enabled": true,
                 "allow_empty": true,
