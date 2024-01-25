@@ -527,6 +527,7 @@
             {
                 "key": "PalEggDefaultHatchingTime",
                 "description": "キョダイタマゴの孵化にかかる時間(単位: hour)",
+                "additional_info": "巨大卵以外の孵化にも影響します。",
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
@@ -724,7 +725,6 @@
             {
                 "key": "ServerPassword",
                 "description": "サーバパスワード(入場者を限定したい場合に利用)",
-                "additional_info": "IP接続ではサーバパスワードのあるサーバに接続できません。",
                 "type": "string",
                 "enabled": true,
                 "allow_empty": true,

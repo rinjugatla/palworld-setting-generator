@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { FormValue, StringSetting } from "$lib/types";
 	import { Input, Label, Select } from "flowbite-svelte";
-    import { selectionItems } from '$lib/common';
+    import { formLabelTextColor, selectionItems } from '$lib/common';
+	import AdditionalInfo from "./AdditionalInfo.svelte";
 
     /**
      * 設定
@@ -15,6 +16,11 @@
      * フォーム入力情報
      */
     export let formValue: FormValue;
+    /**
+     * テキストカラー
+     */
+    let textColor: string;
+    $: textColor = formLabelTextColor(setting, forceEnableDisabledItems);
 </script>
 
 <div class="sm:col-span-2">
@@ -27,6 +33,7 @@
             {#if !setting.allow_empty}
                 <span class="text-red-500">*</span>
             {/if}
+            <AdditionalInfo {textColor} {setting} />
         </Label>
     {#if setting.values.length === 1}
         <Input
