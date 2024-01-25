@@ -527,6 +527,7 @@
             {
                 "key": "PalEggDefaultHatchingTime",
                 "description": "キョダイタマゴの孵化にかかる時間(単位: hour)",
+                "additional_info": "巨大卵以外の孵化にも影響します。",
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
