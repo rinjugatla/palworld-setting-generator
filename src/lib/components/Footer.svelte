@@ -4,6 +4,9 @@
 			<a href="/">トップ</a>
 		</span>
 		<span class="mx-2">
+			<a href="/support">開発支援</a>
+		</span>
+		<span class="mx-2">
 			<a href="/privacy-policy">プライバシーポリシー</a>
 		</span>
 	</div>
