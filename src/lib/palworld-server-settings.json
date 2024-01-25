@@ -684,7 +684,8 @@
             },
             {
                 "key": "ServerName",
-                "description": "サーバ名(環境依存文字は使用しないほうが無難)",
+                "description": "サーバ名",
+                "additional_info": "環境依存文字は使用しないことを推奨します。",
                 "type": "string",
                 "enabled": true,
                 "allow_empty": false,
@@ -697,7 +698,8 @@
             },
             {
                 "key": "ServerDescription",
-                "description": "サーバ説明(環境依存文字は使用しないほうが無難)",
+                "description": "サーバ説明",
+                "additional_info": "環境依存文字は使用しないことを推奨します。",
                 "type": "string",
                 "enabled": true,
                 "allow_empty": true,
@@ -710,8 +712,8 @@
             },
             {
                 "key": "AdminPassword",
-                "description": "アドミンパスワード(RCONパスも同様)",
-                "additional_info": "ゲーム内から管理者権限を取得する場合は15文字以内で設定します。",
+                "description": "アドミンパスワード",
+                "additional_info": "RCONパスも同様\nゲーム内から管理者権限を取得する場合は15文字以内で設定します。",
                 "type": "string",
                 "enabled": true,
                 "allow_empty": false,
@@ -724,7 +726,8 @@
             },
             {
                 "key": "ServerPassword",
-                "description": "サーバパスワード(入場者を限定したい場合に利用)",
+                "description": "サーバパスワード",
+                "additional_info": "入場者を限定したい場合に利用します。\nIP接続時にパスワードがあるとタイムアウトする不具合は修正されました。",
                 "type": "string",
                 "enabled": true,
                 "allow_empty": true,
