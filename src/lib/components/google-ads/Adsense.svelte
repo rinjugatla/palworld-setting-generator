@@ -8,5 +8,5 @@
 </script>
 
 <svelte:head>
-	<script crossorigin="anonymous" async src={loaded ? 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4388498410633493' : null}></script>
+	<meta name="google-adsense-account" content="ca-pub-4388498410633493">
 </svelte:head>
