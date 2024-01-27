@@ -741,7 +741,7 @@
             {
                 "key": "PublicPort",
                 "description": "ポート番号",
-                "additional_info": "この設定は機能していないかもしれません。接続できない場合はサーバ起動にオプションをつけます。\n例: PalServer.exe -publicport=8111",
+                "additional_info": "デフォルト8211から変更して接続できない場合はサーバ起動にオプションをつけます。\n例: PalServer.exe -publicport=8211(ここで設定したポート番号)\nPalServer.exe -publicport=8111 -port=8111とするとここで設定したポート番号は無視してポート番号を変更できます。",
                 "type": "int",
                 "enabled": true,
                 "allow_empty": false,
