@@ -3,6 +3,7 @@
 ## 公開中のサイト
 
 [Palworldサーバ設定生成ツール](https://palworld-setting-generator.deno.dev/)
+[開発支援](https://palworld-setting-generator.deno.dev/support)
 
 ## 環境構築
 
