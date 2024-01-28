@@ -22,6 +22,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -35,6 +37,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -48,6 +52,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 20,
                 "values": [
                     {
                         "value": 1.0,
@@ -61,6 +67,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.5,
+                "max": 2,
                 "values": [
                     {
                         "value": 1.0,
@@ -74,6 +82,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.5,
+                "max": 3,
                 "values": [
                     {
                         "value": 1.0,
@@ -87,6 +97,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -100,6 +112,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -113,6 +127,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -126,6 +142,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -139,6 +157,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -152,6 +172,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -165,6 +187,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -178,6 +202,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -191,6 +217,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -204,6 +232,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -217,6 +247,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -230,6 +262,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.1,
+                "max": 5,
                 "values": [
                     {
                         "value": 1.0,
@@ -244,6 +278,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.5,
+                "max": 3,
                 "values": [
                     {
                         "value": 1.0,
@@ -257,6 +293,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0,
+                "max": 10,
                 "values": [
                     {
                         "value": 1.0,
@@ -270,6 +308,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.5,
+                "max": 3,
                 "values": [
                     {
                         "value": 1.0,
@@ -283,6 +323,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.5,
+                "max": 3,
                 "values": [
                     {
                         "value": 1.0,
@@ -296,6 +338,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.5,
+                "max": 3,
                 "values": [
                     {
                         "value": 1.0,
@@ -309,6 +353,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0.5,
+                "max": 3,
                 "values": [
                     {
                         "value": 1.0,
@@ -426,6 +472,8 @@
                 "type": "int",
                 "enabled": false,
                 "allow_empty": false,
+                "min": 0,
+                "max": 5000,
                 "values": [
                     {
                         "value": 3000,
@@ -465,6 +513,8 @@
                 "type": "int",
                 "enabled": false,
                 "allow_empty": false,
+                "min": 1,
+                "max": 20,
                 "values": [
                     {
                         "value": 15,
@@ -517,6 +567,8 @@
                 "type": "int",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 1,
+                "max": 200,
                 "values": [
                     {
                         "value": 20,
@@ -531,6 +583,8 @@
                 "type": "float",
                 "enabled": true,
                 "allow_empty": false,
+                "min": 0,
+                "max": 240,
                 "values": [
                     {
                         "value": 72.0,
