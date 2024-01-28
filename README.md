@@ -1,5 +1,9 @@
 # Palworldサーバ設定生成ツール
 
+## 公開中のサイト
+
+[Palworldサーバ設定生成ツール](https://palworld-setting-generator.deno.dev/)
+
 ## 環境構築
 
 ```bash
