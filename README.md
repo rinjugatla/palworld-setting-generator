@@ -1,38 +1,59 @@
-# create-svelte
+# Palworldサーバ設定生成ツール
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## 公開中のサイト
 
-## Creating a project
+[Palworldサーバ設定生成ツール](https://palworld-setting-generator.deno.dev/)
+[開発支援](https://palworld-setting-generator.deno.dev/support)
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## 環境構築
 
 ```bash
+# クローン
+git clone https://github.com/rinjugatla/palworld-setting-generator.git
+
+# 必要なパッケージのインストール
+npm install
+
+# 実行
 npm run dev
+# 実行するとローカルサーバが立つのでブラウザでアクセスします
+# http://localhost:5173/ など
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
+# ビルド
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## 設定
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+バージョン毎に存在する設定キーや設定値が異なります。\
+設定一覧を[palworld-server-settings.json](src/lib/palworld-server-settings.json)にまとめています。
+
+設定例
+
+```json
+[
+    {
+        "version": "0.1.3.0", // ゲームバージョン
+        "server_setting_file_format": "; This configuration file is a sample of the default server settings.\n; Changes to this file will NOT be reflected on the server.\n; To change the server settings, modify Pal/Saved/Config/WindowsServer/PalWorldSettings.ini.\n[/Script/Pal.PalGameWorldSettings]\nOptionSettings=(:GENERATE_SETTINGS:)", 
+        // 設定ファイル書式 :GENERATE_SETTINGS:をフォームの値で置き換え
+        "settings": [
+            {
+                "key": "Difficulty", // 設定キー
+                "description": "ゲームの難易度", // 説明
+                "additional_info": "", // 補足説明
+                "type": "planetext", // フォームタイプ
+                "enabled": false, // デフォルトで有効化するか
+                "allow_empty": false, // 空を許可するか
+                "min": 10, // 最小値 数値系で指定
+                "max": 50, // 最大値 数値系で指定
+                "values": [
+                    {
+                        "value": "None", // 複数値を取る場合は複数定義
+                        "defalut": true // デフォルトの値とするか
+                    }
+                ]
+            }
+        ]
+    }
+]
+```
