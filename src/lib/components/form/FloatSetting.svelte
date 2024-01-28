@@ -55,8 +55,8 @@
     <Range
         id="{setting.key}-range"
         size="md"
-        min="0"
-        max={Math.max(defaultSettingNumberValue(setting) * 2, 5)}
+        min={'min' in setting ? setting.min : 0}
+        max={'max' in setting ? setting.max : defaultSettingNumberValue(setting) * 5}
         step="0.1"
         bind:value={formValue.value}
         disabled={!(setting.enabled || forceEnableDisabledItems)}
