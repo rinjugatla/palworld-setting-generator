@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Dropzone } from 'flowbite-svelte';
+	import { Dropzone, Alert } from 'flowbite-svelte';
+	import { InfoCircleSolid } from 'flowbite-svelte-icons';
 	import { readAsTextAsync } from '$lib/common';
 	import type { FormValues } from '$lib/types';
 
@@ -12,6 +13,10 @@
 	 * デフォルトの設定ファイル名
 	 */
 	const settingFilename = 'PalWorldSettings.ini';
+	/**
+	 * 設定ファイルの読み込みを行ったか
+	 */
+	let isLoadedSettinfFIle = false;
 
 	/**
 	 * 設定ファイルから
@@ -37,6 +42,8 @@
 				formValues[key].value = pairs[key];
 			}
 		}
+
+		isLoadedSettinfFIle = true;
 	};
 
 	/**
@@ -150,14 +157,26 @@
 </script>
 
 <div class="m-2">
+	{#if isLoadedSettinfFIle}
+		<div class="mb-2">
+			<Alert color="green" border dismissable={isLoadedSettinfFIle}>
+				<InfoCircleSolid slot="icon" class="w-4 h-4" />
+				設定ファイルの読み込みが完了しました。
+			</Alert>
+		</div>
+	{/if}
 	<Dropzone
 		id="dropzone"
 		on:drop={async (e) => {await dropHandle(e); }}
 		on:dragover={(e) => {
 			e.target.value = '';
+			isLoadedSettinfFIle = false;
 			e.preventDefault();
 		}}
-		on:click={(e) => {e.target.value = '';}}
+		on:click={(e) => {
+			e.target.value = '';
+			isLoadedSettinfFIle = false;
+		}}
 		on:change={async (e) => { await handleChange(e); }}
 		defaultClass="flex flex-col justify-center items-center w-full h-32 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
 	>
