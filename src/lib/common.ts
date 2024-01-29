@@ -51,3 +51,26 @@ export const formLabelTextColor = (setting: IPalworldServerSetting, forceEnableD
     const textColor = !(setting.enabled || forceEnableDisabledItems) ? 'text-gray-400' : 'text-gray-900';
     return textColor;
 }
+
+/**
+ * 非同期でテキストファイルを読み込み
+ * @param file テキストファイル
+ * @returns テキスト
+ */
+export const readAsTextAsync = (file: File): Promise<string> => {
+    // Always return a Promise
+    return new Promise((resolve, reject) => {
+        let content = '';
+        const reader = new FileReader();
+      // Wait till complete
+        reader.onloadend = function (e: any) {
+        const content = e.target.result;
+        resolve(content);
+        };
+        // Make sure to handle error states
+        reader.onerror = function (e: any) {
+            reject(e);
+        };
+        reader.readAsText(file);
+    });
+}
