@@ -34,12 +34,21 @@
 				continue;
 			}
 
-			const isFloat = formValues[key].type === 'float';
-			if (isFloat) {
-				// 1.0000を1に補正
-				formValues[key].value = Number(pairs[key]).toString();
-			} else {
-				formValues[key].value = pairs[key];
+			const value = pairs[key];
+			switch (formValues[key].type) {
+				case 'planetext':
+				case 'string':
+					formValues[key].value = value;
+					break;
+				case 'bool':
+					// 単純にBoolean(value)するとすべてtrueになるので注意
+					formValues[key].value = JSON.parse(value.toLowerCase());
+					break;
+				case 'int':
+				case 'float':
+					// 1.0000を1に補正
+					formValues[key].value = Number(value.toString());
+				default:
 			}
 		}
 
