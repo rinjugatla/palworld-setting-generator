@@ -60,9 +60,8 @@ export const formLabelTextColor = (setting: IPalworldServerSetting, forceEnableD
 export const readAsTextAsync = (file: File): Promise<string> => {
     // Always return a Promise
     return new Promise((resolve, reject) => {
-        let content = '';
         const reader = new FileReader();
-      // Wait till complete
+        // Wait till complete
         reader.onloadend = function (e: any) {
         const content = e.target.result;
         resolve(content);
