@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-    import type { IPalworldServerVersionSettings } from "$lib/types";
+    import type { FormValues, IPalworldServerVersionSettings } from "$lib/types";
 	import { Alert, Checkbox, Label, Select, type SelectOptionType } from "flowbite-svelte";
+	import SettingFileImporter from './SettingFileImporter.svelte';
 
     // 変数
     /**
@@ -16,6 +17,10 @@
      * 無効化された項目を有効化するか
      */
     export let forceEnableDisabledItems: boolean;
+    /**
+	 * フォームの入力値
+	 */
+	export let formValues: FormValues;
 
     // イベント
     const dispatch = createEventDispatcher();
@@ -55,7 +60,12 @@
         </div>
         <div class="sm:col-span-2">
             <Label for="EnableAllItems" class="mb-2">無効化された項目を有効化</Label>
-            <Checkbox class="mb-2" bind:checked={forceEnableDisabledItems}>有効化</Checkbox>
+            <Checkbox bind:checked={forceEnableDisabledItems}>有効化</Checkbox>
+        </div>
+        <div class="sm:col-span-2">
+            <Label class="mb-2">設定ファイル読み込み</Label>
+            <SettingFileImporter 
+            bind:formValues={formValues}/>
         </div>
     </div>
 </Alert>
