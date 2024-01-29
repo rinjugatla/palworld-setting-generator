@@ -142,6 +142,7 @@
 			{palworldServerSettings} 
 			bind:selectedServerVersion={selectedServerVersion} 
 			bind:forceEnableDisabledItems={forceEnableDisabledItems} 
+			bind:formValues={formValues}
 			on:changeSelectVersion={changedSelectVersion}/>
 
 		<form on:submit|preventDefault={() => {downloadElement.downloadSetting()}}>
