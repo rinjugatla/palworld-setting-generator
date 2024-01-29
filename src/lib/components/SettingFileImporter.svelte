@@ -160,14 +160,16 @@
 	{#if isLoadedSettinfFIle}
 		<div class="mb-2">
 			<Alert color="green" border dismissable={isLoadedSettinfFIle}>
-				<InfoCircleSolid slot="icon" class="w-4 h-4" />
+				<InfoCircleSolid slot="icon" class="h-4 w-4" />
 				設定ファイルの読み込みが完了しました。
 			</Alert>
 		</div>
 	{/if}
 	<Dropzone
 		id="dropzone"
-		on:drop={async (e) => {await dropHandle(e); }}
+		on:drop={async (e) => {
+			await dropHandle(e);
+		}}
 		on:dragover={(e) => {
 			e.target.value = '';
 			isLoadedSettinfFIle = false;
@@ -177,7 +179,9 @@
 			e.target.value = '';
 			isLoadedSettinfFIle = false;
 		}}
-		on:change={async (e) => { await handleChange(e); }}
+		on:change={async (e) => {
+			await handleChange(e);
+		}}
 		defaultClass="flex flex-col justify-center items-center w-full h-32 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
 	>
 		<svg
