@@ -13,6 +13,10 @@
      */
     export let forceEnableDisabledItems: boolean;
     /**
+     * 設定キーを表示するか
+     */
+    export let showSettingKey: boolean;
+    /**
      * フォーム入力情報
      */
     export let formValue: FormValue;
@@ -28,6 +32,9 @@
         for={setting.key}
         class="mb-2 {textColor}">
             {setting.description}
+            {#if showSettingKey}
+                {setting.key}
+            {/if}
             <AdditionalInfo {textColor} {setting} />
     </Label>
     

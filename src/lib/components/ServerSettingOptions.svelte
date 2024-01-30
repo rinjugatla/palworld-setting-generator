@@ -18,6 +18,10 @@
      */
     export let forceEnableDisabledItems: boolean;
     /**
+     * 設定キーを表示するか
+     */
+    export let showSettingKey: boolean;
+    /**
 	 * フォームの入力値
 	 */
 	export let formValues: FormValues;
@@ -59,8 +63,10 @@
             />
         </div>
         <div class="sm:col-span-2">
-            <Label for="EnableAllItems" class="mb-2">無効化された項目を有効化</Label>
-            <Checkbox bind:checked={forceEnableDisabledItems}>有効化</Checkbox>
+            <Checkbox bind:checked={forceEnableDisabledItems}>無効化された項目を有効化</Checkbox>
+        </div>
+        <div class="sm:col-span-2">
+            <Checkbox bind:checked={showSettingKey}>設定キーを表示</Checkbox>
         </div>
         <div class="sm:col-span-2">
             <Label class="mb-2">設定ファイル読み込み</Label>
