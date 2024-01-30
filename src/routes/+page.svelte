@@ -23,6 +23,8 @@
 	let downloadElement: DownloadSettingFile;
 	// 無効化された項目を有効化
 	let forceEnableDisabledItems = false;
+	// 設定キーを表示するか
+	let showSettingKey = false;
 	// 選択中のサーババージョン
 	let selectedServerVersion: string;
 	// 選択中のサーババージョンの設定
@@ -142,6 +144,7 @@
 			{palworldServerSettings} 
 			bind:selectedServerVersion={selectedServerVersion} 
 			bind:forceEnableDisabledItems={forceEnableDisabledItems} 
+			bind:showSettingKey={showSettingKey}
 			bind:formValues={formValues}
 			on:changeSelectVersion={changedSelectVersion}/>
 
@@ -149,15 +152,15 @@
 			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 				{#each selectedSettings as setting}
 					{#if setting.type === 'planetext'}
-						<PlanetextSetting {setting} {forceEnableDisabledItems} bind:formValue={formValues[setting.key]} />
+						<PlanetextSetting {setting} {forceEnableDisabledItems} {showSettingKey} bind:formValue={formValues[setting.key]} />
 					{:else if setting.type === 'string'}
-						<StringSetting {setting} {forceEnableDisabledItems} bind:formValue={formValues[setting.key]} />
+						<StringSetting {setting} {forceEnableDisabledItems} {showSettingKey} bind:formValue={formValues[setting.key]} />
 					{:else if setting.type === 'int'}
-						<IntSetting {setting} {forceEnableDisabledItems} bind:formValue={formValues[setting.key]} />
+						<IntSetting {setting} {forceEnableDisabledItems} {showSettingKey} bind:formValue={formValues[setting.key]} />
 					{:else if setting.type === 'float'}
-						<FloatSetting {setting} {forceEnableDisabledItems} bind:formValue={formValues[setting.key]} />
+						<FloatSetting {setting} {forceEnableDisabledItems} {showSettingKey} bind:formValue={formValues[setting.key]} />
 					{:else if setting.type === 'bool'}
-						<BoolSetting {setting} {forceEnableDisabledItems} bind:formValue={formValues[setting.key]} />
+						<BoolSetting {setting} {forceEnableDisabledItems} {showSettingKey} bind:formValue={formValues[setting.key]} />
 					{/if}
 				{/each}
 
