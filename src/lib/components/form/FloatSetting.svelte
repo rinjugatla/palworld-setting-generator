@@ -37,7 +37,7 @@
 	};
 </script>
 
-<div class="sm:col-span-2">
+<div>
     <Label
         for={setting.key}
         class="mb-2 {textColor}">

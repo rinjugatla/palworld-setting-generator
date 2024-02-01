@@ -1,0 +1,328 @@
+[
+    {
+        "version": "0.1.3.0",
+        "places": [
+            [
+                {
+                    "key": "Difficulty",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "DayTimeSpeedRate",
+                    "type": "normal"
+                },
+                {
+                    "key": "NightTimeSpeedRate",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "ExpRate",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "PalCaptureRate",
+                    "type": "normal"
+                },
+                {
+                    "key": "PalSpawnNumRate",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "PalDamageRateAttack",
+                    "type": "normal"
+                },
+                {
+                    "key": "PalDamageRateDefense",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "PlayerDamageRateAttack",
+                    "type": "normal"
+                },
+                {
+                    "key": "PlayerDamageRateDefense",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "PlayerStomachDecreaceRate",
+                    "type": "normal"
+                },
+                {
+                    "key": "PlayerStaminaDecreaceRate",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "PlayerAutoHPRegeneRate",
+                    "type": "normal"
+                },
+                {
+                    "key": "PlayerAutoHpRegeneRateInSleep",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "PalStomachDecreaceRate",
+                    "type": "normal"
+                },
+                {
+                    "key": "PalStaminaDecreaceRate",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "PalAutoHPRegeneRate",
+                    "type": "normal"
+                },
+                {
+                    "key": "PalAutoHpRegeneRateInSleep",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "BuildObjectDamageRate",
+                    "type": "normal"
+                },
+                {
+                    "key": "BuildObjectDeteriorationDamageRate",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "CollectionDropRate",
+                    "type": "normal"
+                },
+                {
+                    "key": "CollectionObjectHpRate",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "CollectionObjectRespawnSpeedRate",
+                    "type": "normal"
+                },
+                {
+                    "key": "EnemyDropItemRate",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "DeathPenalty",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "bEnablePlayerToPlayerDamage",
+                    "type": "normal"
+                },
+                {
+                    "key": "bEnableFriendlyFire",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "bEnableInvaderEnemy",
+                    "type": "normal"
+                },
+                {
+                    "key": "bActiveUNKO",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "bEnableAimAssistPad",
+                    "type": "normal"
+                },
+                {
+                    "key": "bEnableAimAssistKeyboard",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "DropItemMaxNum",
+                    "type": "normal"
+                },
+                {
+                    "key": "DropItemMaxNum_UNKO",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "BaseCampMaxNum",
+                    "type": "normal"
+                },
+                {
+                    "key": "BaseCampWorkerMaxNum",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "DropItemAliveMaxHours",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "bAutoResetGuildNoOnlinePlayers",
+                    "type": "normal"
+                },
+                {
+                    "key": "AutoResetGuildTimeNoOnlinePlayers",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "GuildPlayerMaxNum",
+                    "type": "normal"
+                },
+                {
+                    "key": "PalEggDefaultHatchingTime",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "WorkSpeedRate",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "bIsMultiplay",
+                    "type": "normal"
+                },
+                {
+                    "key": "bIsPvP",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "bCanPickupOtherGuildDeathPenaltyDrop",
+                    "type": "normal"
+                },
+                {
+                    "key": "bEnableNonLoginPenalty",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "bEnableFastTravel",
+                    "type": "normal"
+                },
+                {
+                    "key": "bIsStartLocationSelectByMap",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "bExistPlayerAfterLogout",
+                    "type": "normal"
+                },
+                {
+                    "key": "bEnableDefenseOtherGuildPlayer",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "CoopPlayerMaxNum",
+                    "type": "normal"
+                },
+                {
+                    "key": "ServerPlayerMaxNum",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "ServerName",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "ServerDescription",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "AdminPassword",
+                    "type": "normal"
+                },
+                {
+                    "key": "ServerPassword",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "PublicPort",
+                    "type": "normal"
+                },
+                {
+                    "key": "PublicIP",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "RCONEnabled",
+                    "type": "normal"
+                },
+                {
+                    "key": "RCONPort",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "Region",
+                    "type": "normal"
+                },
+                {
+                    "key": "bUseAuth",
+                    "type": "normal"
+                }
+            ],
+            [
+                {
+                    "key": "BanListURL",
+                    "type": "normal"
+                }
+            ]
+        ]
+    },
+    {
+        "version": "0.1.2.0"
+    }
+]
