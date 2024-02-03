@@ -90,10 +90,15 @@ export interface IPalworldFormFieldSetting {
     /**
      * 基本的に表示する設定キー
      */
-    key: string;
+    key?: string;
     /**
      * パスワード生成などを将来的に作りたい
      * normalの場合は設定キーに紐づく通常のフォームを表示
      */
-    type: "normal";
+    type: "normal" | "section";
+    /**
+     * sectionの場合は設定
+     * 画面に表示する文字列
+     */
+    label?: string;
 }
