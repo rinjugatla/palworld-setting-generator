@@ -11,15 +11,6 @@
 		<Faq>
 			<div>
 				<FaqItem>
-					<svelte:fragment slot="h3">広告について</svelte:fragment>
-					<p class="text-gray-500 dark:text-gray-400">
-						当サイトでは、第三者配信の広告サービス（Googleアドセンス）を利用しており、ユーザーの興味に応じた商品やサービスの広告を表示するため、クッキー（Cookie）を使用しております。
-					</p>
-                    <p class="text-gray-500 dark:text-gray-400">
-						Cookieを無効にする方法やGoogleアドセンスに関する詳細は<a href="https://policies.google.com/technologies/ads?gl=jp" target="_blank" rel="noopener noreferrer">ポリシーと規約 – Google</a>をご確認ください。
-					</p>
-				</FaqItem>
-				<FaqItem>
 					<svelte:fragment slot="h3">アクセス解析について</svelte:fragment>
 					<p class="text-gray-500 dark:text-gray-400">
 						当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。このGoogleアナリティクスはデータの収集のためにCookieを使用しています。このデータは匿名で収集されており、個人を特定するものではありません。
