@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Palworld server setting generator</title>
+	<title>パルワールドサーバ設定生成</title>
 </svelte:head>
 
 <slot />
