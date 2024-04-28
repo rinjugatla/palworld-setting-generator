@@ -304,6 +304,16 @@
         ],
         [
             {
+                "key": "RESTAPIEnabled",
+                "type": "normal"
+            },
+            {
+                "key": "RESTAPIPort",
+                "type": "normal"
+            }
+        ],
+        [
+            {
                 "key": "Region",
                 "type": "normal"
             },
@@ -315,6 +325,26 @@
         [
             {
                 "key": "BanListURL",
+                "type": "normal"
+            },
+            {
+                "key": "AllowConnectPlatform",
+                "type": "normal"
+            }
+        ],
+        [
+            {
+                "key": "bShowPlayerList",
+                "type": "normal"
+            },
+            {
+                "key": "bIsUseBackupSaveData",
+                "type": "normal"
+            }
+        ],
+        [
+            {
+                "key": "LogFormatType",
                 "type": "normal"
             }
         ]
