@@ -17,4 +17,6 @@
             {info}
         </div>
     {/each}
+{:else}
+    <div class="h-4" />
 {/if}
