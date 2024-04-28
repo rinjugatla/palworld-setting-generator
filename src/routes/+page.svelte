@@ -5,19 +5,19 @@
 		type SelectOptionType,
 	} from 'flowbite-svelte';
 	import { palworldServerSettings } from '$lib/palworld-server-serttings';
-	import type { FormValues, IPalworldServerSetting, IPalworldServerSettings } from '$lib/types';
+	import { palworldFormDesignSettings } from '$lib/form-design-settings';
+
+	import type { FormValues, IPalworldServerSetting, IPalworldServerSettings, 
+		IPalworldFormDesignSettings, IPalworldFormPlaceRowSettings } from '$lib/types';
 	import Title from '$lib/components/Title.svelte';
 	import OfficialGuide from '$lib/components/OfficialGuide.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import ServerSettingOptions from '$lib/components/ServerSettingOptions.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import PlanetextSetting from '$lib/components/form/PlanetextSetting.svelte';
-	import StringSetting from '$lib/components/form/StringSetting.svelte';
-	import IntSetting from '$lib/components/form/IntSetting.svelte';
-	import FloatSetting from '$lib/components/form/FloatSetting.svelte';
-	import BoolSetting from '$lib/components/form/BoolSetting.svelte';
 	import SettingTextPreview from '$lib/components/SettingTextPreview.svelte';
 	import DownloadSettingFile from '$lib/components/DownloadSetting.svelte';
+	import SettingRow from '$lib/components/form/SettingRow.svelte';
+	import SettingSection from '$lib/components/form/SettingSection.svelte';
 
 	// フォーム
 	let downloadElement: DownloadSettingFile;
@@ -33,6 +33,8 @@
 	let formValues: FormValues = {};
 	// サーバ設定ファイルテキスト
 	let settingText: string;
+	//　選択中のサーババージョンのフォームデザイン
+	let selectedFormDesignSettings: IPalworldFormPlaceRowSettings[];
 
 	/**
 	 * 最新のサーババージョン
@@ -57,6 +59,9 @@
 		selectedSettings = palworldServerSettings.filter(
 			(settings) => settings.version === selectedServerVersion
 		)[0].settings;
+		selectedFormDesignSettings = palworldFormDesignSettings.filter(
+			(settings) => settings.version === selectedServerVersion
+		)[0].places;
 	};
 
 	/**
@@ -150,18 +155,8 @@
 
 		<form on:submit|preventDefault={() => {downloadElement.downloadSetting()}}>
 			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-				{#each selectedSettings as setting}
-					{#if setting.type === 'planetext'}
-						<PlanetextSetting {setting} {forceEnableDisabledItems} {showSettingKey} bind:formValue={formValues[setting.key]} />
-					{:else if setting.type === 'string'}
-						<StringSetting {setting} {forceEnableDisabledItems} {showSettingKey} bind:formValue={formValues[setting.key]} />
-					{:else if setting.type === 'int'}
-						<IntSetting {setting} {forceEnableDisabledItems} {showSettingKey} bind:formValue={formValues[setting.key]} />
-					{:else if setting.type === 'float'}
-						<FloatSetting {setting} {forceEnableDisabledItems} {showSettingKey} bind:formValue={formValues[setting.key]} />
-					{:else if setting.type === 'bool'}
-						<BoolSetting {setting} {forceEnableDisabledItems} {showSettingKey} bind:formValue={formValues[setting.key]} />
-					{/if}
+				{#each selectedFormDesignSettings as row}
+					<SettingRow formPlaceRow={row} {selectedSettings} {forceEnableDisabledItems} {showSettingKey} bind:formValues={formValues}/>
 				{/each}
 
 				<SettingTextPreview {selectedServerVersion} {selectedSettings} bind:settingText={settingText} {formValues} />

@@ -67,3 +67,38 @@ export interface FormValue {
 }
 
 export type FormValueType = "planetext" | "string" | "float" | "int" | "bool";
+
+// フォームデザイン
+
+/**
+ * フォーム配置
+ */
+export interface IPalworldFormDesignSettings {
+    version: string;
+    places: IPalworldFormPlaceRowSettings[];
+}
+
+/**
+ * フォーム配置 行内に何を表示するか
+ */
+export type IPalworldFormPlaceRowSettings = IPalworldFormFieldSetting[];
+
+/**
+ * フォーム設定 表示するフォーム
+ */
+export interface IPalworldFormFieldSetting {
+    /**
+     * 基本的に表示する設定キー
+     */
+    key?: string;
+    /**
+     * パスワード生成などを将来的に作りたい
+     * normalの場合は設定キーに紐づく通常のフォームを表示
+     */
+    type: "normal" | "section";
+    /**
+     * sectionの場合は設定
+     * 画面に表示する文字列
+     */
+    label?: string;
+}
