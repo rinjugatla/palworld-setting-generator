@@ -809,7 +809,7 @@
         {
             "key": "PublicIP",
             "description": "パブリックIP",
-            "additional_info": "ゲーム側が自動設定するがうまく動作しない場合は指定します。",
+            "additional_info": "ゲーム側が自動設定しますがうまく動作しない場合は指定します。",
             "type": "string",
             "enabled": true,
             "allow_empty": true,
