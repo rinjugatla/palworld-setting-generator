@@ -414,9 +414,9 @@
         },
         {
             "key": "bEnableInvaderEnemy",
-            "description": "侵略エネミーの有効化",
+            "description": "襲撃を有効化するか",
             "type": "bool",
-            "enabled": false,
+            "enabled": true,
             "allow_empty": false,
             "values": [
                 {
