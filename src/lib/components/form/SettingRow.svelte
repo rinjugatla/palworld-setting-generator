@@ -6,14 +6,12 @@
 	import PlanetextSetting from "./PlanetextSetting.svelte";
 	import SectionRow from "./SectionRow.svelte";
 	import StringSetting from "./StringSetting.svelte";
+    import { palworldServerSettings } from '$lib/palworld-server-serttings';
+
     /**
      * フォーム配置設定
      */
     export let formPlaceRow: IPalworldFormPlaceRowSettings;
-    /**
-     * 選択中の設定
-     */
-    export let selectedSettings: IPalworldServerSettings;
     /**
      * 無効な項目を強制的に有効にするか
      */
@@ -29,7 +27,7 @@
 </script>
 
 {#each formPlaceRow as place}
-{@const setting = selectedSettings.filter(setting => setting.key === place?.key)[0]}
+{@const setting = palworldServerSettings.settings.filter(setting => setting.key === place.key)[0]}
 {@const column_width = formPlaceRow.length === 1 ? 'sm:col-span-2' : 'w-full'}
 <div class={column_width}>
     {#if place.type === 'section'}

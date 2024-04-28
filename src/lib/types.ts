@@ -1,6 +1,5 @@
 // パルワールドサーバ設定json
 export interface IPalworldServerVersionSettings {
-    version: string;
     server_setting_file_format: string;
     settings: IPalworldServerSettings;
 }
@@ -74,7 +73,6 @@ export type FormValueType = "planetext" | "string" | "float" | "int" | "bool";
  * フォーム配置
  */
 export interface IPalworldFormDesignSettings {
-    version: string;
     places: IPalworldFormPlaceRowSettings[];
 }
 

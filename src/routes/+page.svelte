@@ -25,43 +25,19 @@
 	let forceEnableDisabledItems = false;
 	// 設定キーを表示するか
 	let showSettingKey = false;
-	// 選択中のサーババージョン
-	let selectedServerVersion: string;
-	// 選択中のサーババージョンの設定
-	let selectedSettings: IPalworldServerSettings;
 	// フォームの入力値
 	let formValues: FormValues = {};
 	// サーバ設定ファイルテキスト
 	let settingText: string;
-	//　選択中のサーババージョンのフォームデザイン
-	let selectedFormDesignSettings: IPalworldFormPlaceRowSettings[];
-
-	/**
-	 * 最新のサーババージョン
-	 */
-	const latestServerVersion = (): string => {
-		const latestVersion = palworldServerSettings[0].version;
-		return latestVersion;
-	};
 
 	/**
 	 * デフォルトの選択肢を取得
 	 * @param settingKey 設定キー
 	 */
 	const defaultSettingValue = (settingKey: string) => {
-		const setting = selectedSettings.filter((setting) => setting.key === settingKey)[0];
+		const setting = palworldServerSettings.settings.filter((setting) => setting.key === settingKey)[0];
 		const value = setting.values.filter((value) => value.defalut)[0].value;
 		return value;
-	};
-
-	// リアクティブされないことがあるので再定義
-	const initCurrentServerSettings = () => {
-		selectedSettings = palworldServerSettings.filter(
-			(settings) => settings.version === selectedServerVersion
-		)[0].settings;
-		selectedFormDesignSettings = palworldFormDesignSettings.filter(
-			(settings) => settings.version === selectedServerVersion
-		)[0].places;
 	};
 
 	/**
@@ -69,7 +45,7 @@
 	 */
 	const initFormValues = () => {
 		formValues = {};
-		selectedSettings.forEach((setting) => {
+		palworldServerSettings.settings.forEach((setting) => {
 			formValues[setting.key] = {
 				key: setting.key,
 				value: defaultSettingValue(setting.key),
@@ -117,23 +93,12 @@
 			default:
 				return null;
 		}
-}
-
-	/**
-	 * サーババージョンの変更
-	 */
-	const changedSelectVersion = (e: Event) => {
-		initFormValues();
-	};
-
-	
+	}
 
 	/**
 	 * 初期化
 	 */
 	const init = () => {
-		selectedServerVersion = latestServerVersion();
-		initCurrentServerSettings();
 		initFormValues();
 	};
 
@@ -146,20 +111,17 @@
 		<OfficialGuide />
 		<Contact />
 		<ServerSettingOptions 
-			{palworldServerSettings} 
-			bind:selectedServerVersion={selectedServerVersion} 
 			bind:forceEnableDisabledItems={forceEnableDisabledItems} 
 			bind:showSettingKey={showSettingKey}
-			bind:formValues={formValues}
-			on:changeSelectVersion={changedSelectVersion}/>
+			bind:formValues={formValues}/>
 
 		<form on:submit|preventDefault={() => {downloadElement.downloadSetting()}}>
 			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-				{#each selectedFormDesignSettings as row}
-					<SettingRow formPlaceRow={row} {selectedSettings} {forceEnableDisabledItems} {showSettingKey} bind:formValues={formValues}/>
+				{#each palworldFormDesignSettings.places as row}
+					<SettingRow formPlaceRow={row} {forceEnableDisabledItems} {showSettingKey} bind:formValues={formValues}/>
 				{/each}
 
-				<SettingTextPreview {selectedServerVersion} {selectedSettings} bind:settingText={settingText} {formValues} />
+				<SettingTextPreview bind:settingText={settingText} {formValues} />
 
 				<DownloadSettingFile {settingText} bind:this={downloadElement}/>
 			</div>
