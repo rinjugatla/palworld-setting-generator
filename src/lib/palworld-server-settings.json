@@ -76,7 +76,8 @@
         },
         {
             "key": "PalSpawnNumRate",
-            "description": "パル出現倍率(パフォーマンスに影響)",
+            "description": "パル出現倍率",
+            "additional_info": "パフォーマンスに影響します。",
             "type": "float",
             "enabled": true,
             "allow_empty": false,
