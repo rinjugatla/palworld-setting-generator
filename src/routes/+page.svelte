@@ -154,7 +154,6 @@
 			on:changeSelectVersion={changedSelectVersion}/>
 
 		<form on:submit|preventDefault={() => {downloadElement.downloadSetting()}}>
-			<SettingSection />
 			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 				{#each selectedFormDesignSettings as row}
 					<SettingRow formPlaceRow={row} {selectedSettings} {forceEnableDisabledItems} {showSettingKey} bind:formValues={formValues}/>
