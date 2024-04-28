@@ -5,14 +5,6 @@
 	import { InfoCircleSolid } from "flowbite-svelte-icons";
 
     /**
-     * 選択中のサーババージョン
-     */
-    export let selectedServerVersion: string;
-    /**
-     * 選択中のサーババージョン
-     */
-    export let selectedSettings: IPalworldServerSettings;
-    /**
      * 設定テキスト
      */
     export let settingText = "";
@@ -44,7 +36,7 @@
 	const createFormSettingText = (): string => {
 		const formatedValues: string[] = [];
 		// フォーム入力値は辞書型で順不同なので順番を保証する
-		selectedSettings.forEach((value) => {
+		palworldServerSettings.settings.forEach((value) => {
 			const formValue = formValues[value.key];
 			let formated = '';
 			// TODO: FormValueをinterfaceからclassにしてclass側でフォーマットする
@@ -85,12 +77,10 @@
 	};
     
     /**
-	 * 選択中のサーババージョンのサーバ設定書式
+	 * サーバ設定書式
 	 */
 	const selectedServerSettingFormat = () => {
-		const format = palworldServerSettings.filter(
-			(settings) => settings.version === selectedServerVersion
-		)[0].server_setting_file_format;
+		const format = palworldServerSettings.server_setting_file_format;
 		return format;
 	};
 </script>
