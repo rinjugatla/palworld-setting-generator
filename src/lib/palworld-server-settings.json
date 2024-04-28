@@ -391,7 +391,7 @@
             "key": "bEnablePlayerToPlayerDamage",
             "description": "PvP許可",
             "type": "bool",
-            "enabled": false,
+            "enabled": true,
             "allow_empty": false,
             "values": [
                 {
@@ -404,7 +404,7 @@
             "key": "bEnableFriendlyFire",
             "description": "フレンドリーファイア有効化",
             "type": "bool",
-            "enabled": false,
+            "enabled": true,
             "allow_empty": false,
             "values": [
                 {
@@ -621,7 +621,7 @@
             "key": "bIsPvP",
             "description": "PvPか",
             "type": "bool",
-            "enabled": false,
+            "enabled": true,
             "allow_empty": false,
             "values": [
                 {
