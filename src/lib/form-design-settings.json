@@ -284,11 +284,11 @@
         ],
         [
             {
-                "key": "PublicPort",
+                "key": "PublicIP",
                 "type": "normal"
             },
             {
-                "key": "PublicIP",
+                "key": "PublicPort",
                 "type": "normal"
             }
         ],
@@ -299,6 +299,16 @@
             },
             {
                 "key": "RCONPort",
+                "type": "normal"
+            }
+        ],
+        [
+            {
+                "key": "RESTAPIEnabled",
+                "type": "normal"
+            },
+            {
+                "key": "RESTAPIPort",
                 "type": "normal"
             }
         ],
@@ -315,6 +325,26 @@
         [
             {
                 "key": "BanListURL",
+                "type": "normal"
+            },
+            {
+                "key": "AllowConnectPlatform",
+                "type": "normal"
+            }
+        ],
+        [
+            {
+                "key": "bShowPlayerList",
+                "type": "normal"
+            },
+            {
+                "key": "bIsUseBackupSaveData",
+                "type": "normal"
+            }
+        ],
+        [
+            {
+                "key": "LogFormatType",
                 "type": "normal"
             }
         ]

@@ -76,7 +76,8 @@
         },
         {
             "key": "PalSpawnNumRate",
-            "description": "パル出現倍率(パフォーマンスに影響)",
+            "description": "パル出現倍率",
+            "additional_info": "パフォーマンスに影響します。",
             "type": "float",
             "enabled": true,
             "allow_empty": false,
@@ -390,7 +391,7 @@
             "key": "bEnablePlayerToPlayerDamage",
             "description": "PvP許可",
             "type": "bool",
-            "enabled": false,
+            "enabled": true,
             "allow_empty": false,
             "values": [
                 {
@@ -403,7 +404,7 @@
             "key": "bEnableFriendlyFire",
             "description": "フレンドリーファイア有効化",
             "type": "bool",
-            "enabled": false,
+            "enabled": true,
             "allow_empty": false,
             "values": [
                 {
@@ -414,9 +415,9 @@
         },
         {
             "key": "bEnableInvaderEnemy",
-            "description": "侵略エネミーの有効化",
+            "description": "襲撃を有効化するか",
             "type": "bool",
-            "enabled": false,
+            "enabled": true,
             "allow_empty": false,
             "values": [
                 {
@@ -620,7 +621,7 @@
             "key": "bIsPvP",
             "description": "PvPか",
             "type": "bool",
-            "enabled": false,
+            "enabled": true,
             "allow_empty": false,
             "values": [
                 {
@@ -809,7 +810,7 @@
         {
             "key": "PublicIP",
             "description": "パブリックIP",
-            "additional_info": "ゲーム側が自動設定するがうまく動作しない場合は指定します。",
+            "additional_info": "ゲーム側が自動設定しますがうまく動作しない場合は指定します。",
             "type": "string",
             "enabled": true,
             "allow_empty": true,
@@ -885,6 +886,93 @@
                 {
                     "value": "https://api.palworldgame.com/api/banlist.txt",
                     "defalut": true
+                }
+            ]
+        },
+        {
+            "key": "RESTAPIEnabled",
+            "description": "REST APIを有効化",
+            "additional_info": "有効化する場合はアドミンパスワードを設定することを推奨",
+            "type": "bool",
+            "enabled": true,
+            "allow_empty": false,
+            "values": [
+                {
+                    "value": false,
+                    "defalut": true
+                }
+            ]
+        },
+        {
+            "key": "RESTAPIPort",
+            "description": "REST APIポート番号",
+            "type": "int",
+            "enabled": true,
+            "allow_empty": false,
+            "values": [
+                {
+                    "value": 8212,
+                    "defalut": true
+                }
+            ]
+        },
+        {
+            "key": "bShowPlayerList",
+            "description": "プレイヤリストの表示の可否",
+            "additional_info": "ESCキー画面で表示",
+            "type": "bool",
+            "enabled": true,
+            "allow_empty": false,
+            "values": [
+                {
+                    "value": false,
+                    "defalut": true
+                }
+            ]
+        },
+        {
+            "key": "AllowConnectPlatform",
+            "description": "接続可能プラットフォーム",
+            "additional_info": "0.2.3.0では機能しません",
+            "type": "planetext",
+            "enabled": false,
+            "allow_empty": false,
+            "values": [
+                {
+                    "value": "Steam",
+                    "defalut": true
+                }
+            ]
+        },
+        {
+            "key": "bIsUseBackupSaveData",
+            "description": "セーブデータの自動バックアップ",
+            "additional_info": "有効化するとディスクへの負荷が高まります",
+            "type": "bool",
+            "enabled": true,
+            "allow_empty": false,
+            "values": [
+                {
+                    "value": true,
+                    "defalut": true
+                }
+            ]
+        },
+        {
+            "key": "LogFormatType",
+            "description": "ログフォーマット",
+            "type": "planetext",
+            "enabled": true,
+            "allow_empty": false,
+            "values": [
+                {
+                    "value": "Text",
+                    "description": "テキスト形式",
+                    "defalut": true
+                },
+                {
+                    "value": "Json",
+                    "description": "JSON形式"
                 }
             ]
         }
