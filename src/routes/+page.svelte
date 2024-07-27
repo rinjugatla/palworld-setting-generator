@@ -109,7 +109,6 @@
 	<Section name="crudcreateform">
 		<Title />
 		<OfficialGuide />
-		<Contact />
 		<ServerSettingOptions 
 			bind:forceEnableDisabledItems={forceEnableDisabledItems} 
 			bind:showSettingKey={showSettingKey}
